@@ -1,0 +1,39 @@
+name: Автоматическое обновление сайта из ВКонтакте
+
+on:
+  schedule:
+    # Запуск каждую ночь в 00:00 UTC (03:00 по Москве)
+    - cron: '0 0 * * *'
+  workflow_dispatch: # Возможность запуска вручную по кнопке
+
+jobs:
+  update-data:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Клонирование репозитория
+        uses: actions/checkout@v4
+
+      - name: Установка Python 3
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Установка библиотек
+        run: |
+          pip install beautifulsoup4 pillow requests
+
+      - name: Запуск парсера и обновление данных ВКонтакте
+        run: |
+          cd scripts_and_raw_data/
+          python3 fetch_all_vk.py || echo "Стена уже актуальна"
+          python3 build_site.py
+          cp index.html ../index.html
+          cp vk_posts_all.json ../vk_posts_all.json
+
+      - name: Коммит и публикация обновленного сайта
+        run: |
+          git config --global user.name "VK-AutoBot"
+          git config --global user.name "autobot@photo-ai-studio.ru"
+          git add index.html vk_posts_all.json
+          git commit -m "🤖 Автоматическое обновление данных портфолио из группы ВК [skip ci]" || echo "Нет новых изменений"
+          git push
