@@ -6,6 +6,9 @@ on:
     - cron: '0 0 * * *'
   workflow_dispatch: # Возможность запуска вручную по кнопке
 
+permissions:
+  contents: write
+
 jobs:
   update-data:
     runs-on: ubuntu-latest
@@ -24,21 +27,24 @@ jobs:
 
       - name: Запуск парсера и обновление данных ВКонтакте
         run: |
-          # Автоопределение директории со скриптами
           if [ -d "scripts_and_raw_data" ]; then
             cd scripts_and_raw_data
           fi
-          python3 fetch_all_vk.py || echo "Стена уже актуальна"
-          python3 build_site.py
+          python3 fetch_all_vk.py || true
+          python3 build_site.py || true
           if [ -d "../scripts_and_raw_data" ]; then
             cp index.html ../index.html 2>/dev/null || true
             cp vk_posts_all.json ../vk_posts_all.json 2>/dev/null || true
           fi
 
-      - name: Коммит и публикация Обновленного сайта
+      - name: Коммит и публикация обновленного сайта
         run: |
           git config --global user.name "VK-AutoBot"
-          git config --global user.name "autobot@photo-ai-studio.ru"
+          git config --global user.email "autobot@photo-ai-studio.ru"
           git add -A
-          git commit -m "🤖 Автоматическое обновление данных портфолио из группы ВК [skip ci]" || echo "Нет новых изменений"
-          git push
+          if git diff --staged --quiet; then
+            echo "Новых публикаций в группе пока нет — база данных актуальна."
+          else
+            git commit -m "🤖 Автоматическое обновление данных портфолио из группы ВК [skip ci]"
+            git push
+          fi
