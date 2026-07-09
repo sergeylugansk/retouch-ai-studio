@@ -3,911 +3,603 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Photo AI Studio — AI-ретушь, бизнес-портреты и реставрация фото онлайн</title>
-<meta name="description" content="Премиальная AI-обработка фото онлайн: естественная ретушь портретов, деловые фото, нейро-аватары и реставрация старых снимков. От 300 ₽, результат от 15 минут, заказ через ВК.">
-<meta name="keywords" content="ретушь фото онлайн, AI ретушь, реставрация старых фото, бизнес портрет, нейро аватар">
+<title>Photo AI Studio — AI-ретушь, бизнес-портреты и реставрация фото</title>
+<meta name="description" content="AI-ретушь фото онлайн: бизнес-портреты, нейро-аватары, реставрация старых фотографий. От 300 ₽, от 15 минут, заказ через ВКонтакте.">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <link rel="canonical" href="https://retouch-ai-studio.github.io/retouch-ai-studio/">
-<meta property="og:title" content="Photo AI Studio — Премиальная AI-ретушь онлайн">
-<meta property="og:description" content="Естественная ретушь портретов, бизнес-фото, нейро-образы и восстановление старых снимков. От 300 ₽ · от 15 минут.">
+<meta property="og:title" content="Photo AI Studio — AI-ретушь и реставрация фото">
+<meta property="og:description" content="Естественная ретушь портретов, деловые фото, нейро-образы. От 300 ₽. Заказ онлайн через ВК.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://retouch-ai-studio.github.io/retouch-ai-studio/">
-<meta property="og:locale" content="ru_RU">
 <meta property="og:image" content="https://retouch-ai-studio.github.io/retouch-ai-studio/preview.jpg">
 <meta name="theme-color" content="#05060c">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"ProfessionalService","name":"Photo AI Studio","description":"AI-ретушь и реставрация фото онлайн.","url":"https://retouch-ai-studio.github.io/retouch-ai-studio/","areaServed":"RU","priceRange":"от 300 ₽","sameAs":["https://vk.com/retouch_ai_online"]}
-</script>
-<script>window.YANDEX_METRIKA_ID=null;(function(){if(!window.YANDEX_METRIKA_ID)return;window.ym=window.ym||function(){(window.ym.a=window.ym.a||[]).push(arguments)};var s=document.createElement('script');s.async=true;s.src='https://mc.yandex.ru/metrika/tag.js';document.head.appendChild(s);ym(window.YANDEX_METRIKA_ID,'init',{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});})();</script>
 <style>
-/* ============ RESET & BASE ============ */
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+*{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --bg-0:#05060c;
-  --bg-1:#0a0d1a;
-  --bg-card:linear-gradient(155deg,rgba(22,28,50,.72) 0%,rgba(14,18,34,.82) 100%);
-  --bg-card-solid:rgba(18,22,40,.85);
-  --stroke:rgba(255,255,255,.08);
-  --stroke-strong:rgba(255,255,255,.16);
-  --cyan:#4df3ff;
-  --cyan-soft:#4df3ff;
-  --purple:#a855f7;
-  --blue:#3b82f6;
-  --pink:#ec4899;
-  --gold:#fbbf24;
-  --green:#34d399;
-  --red:#f87171;
-  --text:#eef2ff;
-  --text-2:#9aa4c3;
-  --text-3:#6b7294;
-  --grad-primary:linear-gradient(135deg,#4df3ff 0%,#a855f7 100%);
-  --grad-vk:linear-gradient(135deg,#0077ff 0%,#00d4ff 100%);
-  --grad-gold:linear-gradient(135deg,#fbbf24 0%,#f59e0b 100%);
-  --shadow-glow:0 0 50px rgba(77,243,255,.18);
-  --shadow-lg:0 30px 80px rgba(0,0,0,.55);
-  --ease:cubic-bezier(.22,.9,.3,1);
+  --bg:#05060c;--card:rgba(18,22,40,.82);--stroke:rgba(255,255,255,.08);--stroke2:rgba(255,255,255,.16);
+  --cyan:#4df3ff;--purple:#a855f7;--blue:#3b82f6;--gold:#fbbf24;--green:#34d399;
+  --text:#eef2ff;--muted:#9aa4c3;--muted2:#6b7294;
+  --grad:linear-gradient(135deg,#4df3ff,#a855f7);
+  --gradvk:linear-gradient(135deg,#0077ff,#00d4ff);
 }
 html{scroll-behavior:smooth}
 body{
-  font-family:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
-  background:var(--bg-0);
-  color:var(--text);
-  line-height:1.65;
-  overflow-x:hidden;
-  -webkit-font-smoothing:antialiased;
-  text-rendering:optimizeLegibility;
+  font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased;
 }
-/* Анимированная сетка/свечение на фоне */
 body::before{
-  content:"";position:fixed;inset:0;z-index:-2;
-  background:
-    radial-gradient(1100px 600px at 12% 8%,rgba(77,243,255,.12),transparent 60%),
-    radial-gradient(900px 700px at 85% 20%,rgba(168,85,247,.18),transparent 60%),
-    radial-gradient(700px 700px at 50% 100%,rgba(59,130,246,.12),transparent 60%),
-    linear-gradient(180deg,#05060c 0%,#080a14 100%);
-  pointer-events:none;
+  content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;
+  background:radial-gradient(1000px 600px at 12% 8%,rgba(77,243,255,.1),transparent 60%),
+             radial-gradient(900px 600px at 85% 20%,rgba(168,85,247,.14),transparent 60%),
+             linear-gradient(180deg,#05060c,#080a14);
 }
-body::after{
-  content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.35;
-  background-image:
-    linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);
-  background-size:42px 42px;
-  mask-image:radial-gradient(ellipse 80% 60% at 50% 40%,#000 40%,transparent 100%);
-}
-
-/* Плавающие размытые "планеты"-блобы */
-.blob{position:absolute;border-radius:50%;filter:blur(80px);z-index:-1;opacity:.5;pointer-events:none;animation:float 18s ease-in-out infinite}
-@keyframes float{0%,100%{transform:translate(0,0)}50%{transform:translate(30px,-40px)}}
-
 ::selection{background:var(--cyan);color:#05060c}
 a{color:inherit}
 img{max-width:100%;display:block}
-button,input,textarea{font-family:inherit;color:inherit}
+button{font-family:inherit;color:inherit;cursor:pointer}
 ::-webkit-scrollbar{width:10px}
 ::-webkit-scrollbar-track{background:#070913}
 ::-webkit-scrollbar-thumb{background:linear-gradient(180deg,rgba(77,243,255,.5),rgba(168,85,247,.5));border-radius:10px}
-
-/* ============ NAVBAR ============ */
 nav{
-  position:fixed;inset:0 0 auto 0;height:76px;z-index:1000;
-  display:flex;align-items:center;justify-content:space-between;padding:0 max(5%,24px);
-  background:rgba(8,10,20,.65);
-  backdrop-filter:saturate(160%) blur(18px);
-  -webkit-backdrop-filter:saturate(160%) blur(18px);
+  position:fixed;inset:0 0 auto 0;height:72px;z-index:100;display:flex;align-items:center;justify-content:space-between;
+  padding:0 max(5%,20px);background:rgba(8,10,20,.65);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
   border-bottom:1px solid var(--stroke);
-  transition:box-shadow .3s var(--ease),background .3s var(--ease);
 }
-nav.scrolled{box-shadow:0 10px 40px rgba(0,0,0,.35)}
-.logo{display:inline-flex;align-items:center;gap:12px;text-decoration:none;color:#fff;font-weight:800;font-size:1.25rem;letter-spacing:-.5px}
-.logo-badge{
-  width:40px;height:40px;border-radius:12px;
-  background:var(--grad-primary);
-  display:grid;place-items:center;font-size:1.15rem;
-  box-shadow:0 8px 24px rgba(77,243,255,.35),inset 0 0 0 1px rgba(255,255,255,.15);
-  position:relative;
-}
-.logo-badge::after{content:"";position:absolute;inset:-6px;border-radius:16px;border:1px solid rgba(77,243,255,.22);animation:pulse 2.5s var(--ease) infinite}
-@keyframes pulse{0%{opacity:.8;transform:scale(1)}100%{opacity:0;transform:scale(1.4)}}
-.nav-links{display:flex;gap:6px;list-style:none}
-.nav-links a{
-  color:var(--text-2);text-decoration:none;font-weight:500;font-size:.92rem;
-  padding:8px 14px;border-radius:10px;transition:all .25s var(--ease);
-}
+.logo{display:inline-flex;align-items:center;gap:12px;text-decoration:none;color:#fff;font-weight:800;font-size:1.2rem;letter-spacing:-.5px}
+.logo-badge{width:40px;height:40px;border-radius:12px;background:var(--grad);display:grid;place-items:center;font-size:1.15rem;box-shadow:0 8px 24px rgba(77,243,255,.3)}
+.nav-links{display:flex;gap:4px;list-style:none}
+.nav-links a{color:var(--muted);text-decoration:none;font-weight:500;font-size:.92rem;padding:8px 14px;border-radius:10px;transition:.2s}
 .nav-links a:hover{color:#fff;background:rgba(255,255,255,.06)}
-.nav-links a.cta{background:var(--grad-vk);color:#fff;font-weight:600;box-shadow:0 6px 20px rgba(0,119,255,.4)}
-.nav-links a.cta:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(0,119,255,.55)}
-.btn-vk{
-  background:var(--grad-vk);color:#fff;padding:11px 22px;border-radius:999px;
-  text-decoration:none;font-weight:600;font-size:.9rem;display:inline-flex;align-items:center;gap:8px;
-  box-shadow:0 8px 24px rgba(0,119,255,.45);transition:transform .25s var(--ease),box-shadow .25s var(--ease);
-}
-.btn-vk:hover{transform:translateY(-2px);box-shadow:0 14px 30px rgba(0,119,255,.6)}
-.burger{display:none;background:none;border:0;color:#fff;font-size:1.6rem;cursor:pointer}
-
-/* ============ BUTTONS ============ */
+.btn-vk{background:var(--gradvk);color:#fff;padding:10px 20px;border-radius:999px;text-decoration:none;font-weight:600;font-size:.88rem;display:inline-flex;align-items:center;gap:8px;box-shadow:0 6px 20px rgba(0,119,255,.45);transition:.25s}
+.btn-vk:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(0,119,255,.6)}
 .btn-primary{
-  background:var(--grad-primary);color:#03121a;padding:14px 30px;border-radius:999px;font-weight:700;
-  text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:8px;
-  border:0;cursor:pointer;font-size:.98rem;
-  box-shadow:0 12px 40px rgba(77,243,255,.25),inset 0 1px 0 rgba(255,255,255,.3);
-  transition:transform .25s var(--ease),box-shadow .25s var(--ease);
-  position:relative;overflow:hidden;
-}
-.btn-primary::after{
-  content:"";position:absolute;inset:0;background:linear-gradient(120deg,transparent,rgba(255,255,255,.4),transparent);
-  transform:translateX(-110%);transition:transform .6s var(--ease);
+  background:var(--grad);color:#03121a;padding:13px 28px;border-radius:999px;font-weight:700;text-decoration:none;
+  display:inline-flex;align-items:center;gap:8px;border:0;font-size:.95rem;
+  box-shadow:0 12px 35px rgba(77,243,255,.25);transition:transform .25s,box-shadow .25s;
 }
 .btn-primary:hover{transform:translateY(-3px);box-shadow:0 20px 50px rgba(77,243,255,.4)}
-.btn-primary:hover::after{transform:translateX(110%)}
-.btn-secondary{
-  background:rgba(255,255,255,.04);color:#fff;padding:14px 30px;border-radius:999px;font-weight:600;
-  text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:8px;
-  border:1px solid var(--stroke-strong);cursor:pointer;font-size:.95rem;
-  transition:all .25s var(--ease);backdrop-filter:blur(10px);
-}
-.btn-secondary:hover{background:rgba(255,255,255,.1);border-color:var(--cyan);color:var(--cyan-soft);transform:translateY(-2px)}
-.btn-ghost{background:transparent;border:0;color:var(--text-2);cursor:pointer;padding:8px 14px;border-radius:10px;font-weight:600;transition:.2s var(--ease)}
-.btn-ghost:hover{color:#fff;background:rgba(255,255,255,.06)}
-
-/* ============ LAYOUT / SECTIONS ============ */
-section{padding:110px max(5%,24px);max-width:1280px;margin:0 auto;position:relative}
-.eyebrow{
-  display:inline-flex;align-items:center;gap:8px;
-  padding:7px 14px;border-radius:999px;
-  background:rgba(77,243,255,.08);border:1px solid rgba(77,243,255,.25);
-  color:var(--cyan-soft);font-size:.82rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase;
-  margin-bottom:20px;
-}
-.eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--cyan-soft);box-shadow:0 0 0 3px rgba(77,243,255,.2);animation:pulseDot 1.8s infinite}
-@keyframes pulseDot{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.6;transform:scale(.75)}}
-.section-header{text-align:center;margin-bottom:60px}
-.section-header h2{font-size:clamp(1.9rem,4vw,3rem);font-weight:900;letter-spacing:-1px;line-height:1.1;margin-bottom:14px}
-.section-header p{color:var(--text-2);font-size:clamp(1rem,1.3vw,1.15rem);max-width:680px;margin:0 auto}
-.gradient-text{background:var(--grad-primary);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
-
-/* ============ HERO ============ */
-.hero{padding-top:160px;display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center}
-.hero-content h1{
-  font-size:clamp(2.4rem,5.4vw,4.2rem);font-weight:900;line-height:1.05;letter-spacing:-1.5px;margin-bottom:22px;
-}
-.hero-content .lead{color:var(--text-2);font-size:clamp(1rem,1.4vw,1.2rem);margin-bottom:28px;max-width:580px}
-.trust-row{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px}
-.chip{
-  display:inline-flex;align-items:center;gap:7px;padding:8px 14px;border-radius:999px;
-  background:rgba(255,255,255,.045);border:1px solid var(--stroke);color:#dbe6ff;font-size:.85rem;font-weight:600;
-}
-.chip.check{color:var(--green);border-color:rgba(52,211,153,.3);background:rgba(52,211,153,.08)}
-.live-chip{
-  display:inline-flex;align-items:center;gap:10px;
-  padding:9px 18px;border-radius:999px;font-size:.88rem;font-weight:700;margin-bottom:28px;
-  background:rgba(52,211,153,.08);border:1px solid rgba(52,211,153,.3);color:#6ee7b7;
-}
-.live-chip.warm{background:rgba(251,191,36,.08);border-color:rgba(251,191,36,.3);color:var(--gold)}
-.live-chip.offline{background:rgba(255,255,255,.04);border-color:var(--stroke);color:var(--text-3)}
-.live-dot{width:9px;height:9px;border-radius:50%;background:#34d399;box-shadow:0 0 0 0 rgba(52,211,153,.7);animation:livePulse 1.8s infinite}
-.live-chip.warm .live-dot{background:var(--gold);animation-name:livePulseWarm}
-.live-chip.offline .live-dot{background:#6b7294;animation:none}
-@keyframes livePulse{0%,100%{box-shadow:0 0 0 0 rgba(52,211,153,.7)}70%{box-shadow:0 0 0 10px rgba(52,211,153,0)}}
-@keyframes livePulseWarm{0%,100%{box-shadow:0 0 0 0 rgba(251,191,36,.7)}70%{box-shadow:0 0 0 10px rgba(251,191,36,0)}}
-.hero-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:30px 0 36px}
-.stat-item{padding:14px 6px;border-radius:14px}
-.stat-item h3{font-size:clamp(1.4rem,2.2vw,1.9rem);font-weight:900;background:var(--grad-primary);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;line-height:1}
-.stat-item span{display:block;font-size:.75rem;color:var(--text-3);text-transform:uppercase;letter-spacing:.8px;margin-top:6px;font-weight:600}
-.hero-actions{display:flex;flex-wrap:wrap;gap:12px}
-.hero-preview{position:relative;border-radius:28px;padding:14px;background:var(--bg-card);border:1px solid var(--stroke);box-shadow:var(--shadow-lg);backdrop-filter:blur(20px)}
-.hero-preview::before{
-  content:"";position:absolute;inset:-1px;border-radius:28px;padding:1px;
-  background:linear-gradient(135deg,rgba(77,243,255,.6),rgba(168,85,247,.3),transparent 70%);
-  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
-  -webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none;
-}
-.hero-preview img{border-radius:20px;width:100%;aspect-ratio:4/5;object-fit:cover}
-.preview-badge{
-  position:absolute;left:20px;right:20px;bottom:20px;
-  background:rgba(8,10,20,.7);backdrop-filter:blur(16px);
-  border:1px solid var(--stroke);border-radius:16px;padding:14px 18px;
-  display:flex;align-items:center;justify-content:space-between;gap:10px;
-}
-.preview-badge strong{font-weight:700;font-size:.95rem}
-.preview-badge small{color:var(--cyan-soft);font-weight:600;font-size:.82rem}
-.preview-tag{background:rgba(77,243,255,.12);color:var(--cyan-soft);padding:6px 12px;border-radius:999px;font-size:.78rem;font-weight:800;border:1px solid rgba(77,243,255,.25)}
-
-/* ============ PROMO BANNER ============ */
-.promo{
-  max-width:1100px;margin:40px auto 0;padding:26px 32px;
-  border-radius:24px;position:relative;overflow:hidden;
-  background:linear-gradient(120deg,rgba(251,191,36,.12),rgba(236,72,153,.1),rgba(168,85,247,.14));
-  border:1px solid rgba(251,191,36,.35);
-  display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;
-}
-.promo::before{
-  content:"";position:absolute;inset:0;
-  background:radial-gradient(500px 200px at 10% 20%,rgba(251,191,36,.18),transparent 60%);
-  pointer-events:none;
-}
-.promo-tag{
-  display:inline-block;padding:4px 10px;border-radius:8px;background:rgba(251,191,36,.2);
-  color:#fde68a;font-weight:800;font-size:.75rem;letter-spacing:1px;text-transform:uppercase;margin-right:10px;
-}
-.promo h3{font-size:clamp(1.05rem,1.5vw,1.3rem);margin-bottom:4px}
-.promo p{color:var(--text-2);font-size:.92rem}
-.promo b{color:var(--cyan-soft)}
-
-/* ============ TABS / PILLS ============ */
-.pills{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:40px}
-.pill{
-  padding:10px 20px;border-radius:999px;background:rgba(255,255,255,.04);
-  border:1px solid var(--stroke);color:var(--text-2);font-weight:600;font-size:.9rem;
-  cursor:pointer;transition:.25s var(--ease);
-}
-.pill:hover{border-color:var(--stroke-strong);color:#fff}
-.pill.active{background:rgba(77,243,255,.12);border-color:var(--cyan-soft);color:#fff;box-shadow:0 0 20px rgba(77,243,255,.2)}
-
-/* ============ COMPARISON SLIDER ============ */
-.comparison-wrap{
-  max-width:900px;margin:0 auto;background:var(--bg-card);border:1px solid var(--stroke);
-  border-radius:28px;padding:22px;box-shadow:var(--shadow-lg);backdrop-filter:blur(20px);
-}
-.comparison{position:relative;width:100%;aspect-ratio:16/10;border-radius:20px;overflow:hidden;background:#000;user-select:none}
-.comparison img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none}
-.comp-before{clip-path:polygon(0 0,50% 0,50% 100%,0 100%);filter:grayscale(15%) contrast(.92) brightness(.9)}
-.comp-handle{position:absolute;top:0;left:50%;width:3px;height:100%;background:var(--cyan-soft);transform:translateX(-50%);box-shadow:0 0 20px var(--cyan-soft);pointer-events:none}
-.comp-knob{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:50px;height:50px;border-radius:50%;background:#fff;color:#03121a;display:grid;place-items:center;font-weight:900;font-size:1.2rem;box-shadow:0 8px 30px rgba(0,0,0,.5);border:3px solid var(--cyan-soft)}
-.comp-labels{display:flex;justify-content:space-between;margin-top:16px;font-weight:700;font-size:.92rem}
-.comp-labels .b{color:#f87171}
-.comp-labels .a{color:var(--cyan-soft)}
-.comp-desc{text-align:center;color:var(--text-2);margin-top:10px;font-size:.95rem}
-
-/* ============ SERVICES ============ */
+.btn-secondary{background:rgba(255,255,255,.04);color:#fff;padding:13px 28px;border-radius:999px;font-weight:600;text-decoration:none;display:inline-flex;align-items:center;gap:8px;border:1px solid var(--stroke2);font-size:.95rem;transition:.25s}
+.btn-secondary:hover{background:rgba(255,255,255,.1);border-color:var(--cyan);color:var(--cyan);transform:translateY(-2px)}
+section{padding:100px max(5%,20px);max-width:1200px;margin:0 auto}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;border-radius:999px;background:rgba(77,243,255,.08);border:1px solid rgba(77,243,255,.25);color:var(--cyan);font-size:.8rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase;margin-bottom:20px}
+.dot{width:6px;height:6px;border-radius:50%;background:var(--cyan);animation:dotPulse 1.8s infinite}
+@keyframes dotPulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.75)}}
+.section-header{text-align:center;margin-bottom:50px}
+.section-header h2{font-size:clamp(1.8rem,4vw,2.7rem);font-weight:900;letter-spacing:-1px;line-height:1.15;margin-bottom:14px}
+.section-header p{color:var(--muted);font-size:1.05rem;max-width:680px;margin:0 auto}
+.g{background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.hero{padding-top:150px;display:grid;grid-template-columns:1fr;gap:40px;text-align:center}
+.hero h1{font-size:clamp(2.2rem,5vw,3.8rem);font-weight:900;line-height:1.05;letter-spacing:-1.5px;margin:0 auto 20px;max-width:900px}
+.hero .lead{color:var(--muted);font-size:clamp(1rem,1.4vw,1.15rem);margin:0 auto 24px;max-width:640px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:24px}
+.chip{padding:8px 14px;border-radius:999px;background:rgba(255,255,255,.045);border:1px solid var(--stroke);color:#dbe6ff;font-size:.85rem;font-weight:600}
+.chip.ok{color:var(--green);border-color:rgba(52,211,153,.3);background:rgba(52,211,153,.08)}
+.hero-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:16px;max-width:720px;margin:28px auto 32px}
+.stat{padding:14px 8px;border-radius:14px}
+.stat h3{font-size:1.5rem;font-weight:900;background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;line-height:1}
+.stat span{display:block;font-size:.78rem;color:var(--muted2);text-transform:uppercase;letter-spacing:.7px;margin-top:6px;font-weight:600}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.note{margin-top:18px;color:var(--muted);font-size:.88rem;max-width:600px;margin-left:auto;margin-right:auto}
+/* Services */
 .grid{display:grid;gap:24px}
-.grid.c4{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
-.grid.c3{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.c4{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.c3{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
 .card{
-  background:var(--bg-card);border:1px solid var(--stroke);border-radius:24px;padding:32px;
-  position:relative;overflow:hidden;transition:transform .35s var(--ease),border-color .35s var(--ease),box-shadow .35s var(--ease);
-  display:flex;flex-direction:column;gap:14px;backdrop-filter:blur(16px);
+  background:var(--card);border:1px solid var(--stroke);border-radius:22px;padding:30px;
+  display:flex;flex-direction:column;gap:14px;transition:transform .3s,border-color .3s,box-shadow .3s;
+  backdrop-filter:blur(16px);position:relative;
 }
-.card::before{
-  content:"";position:absolute;inset:0;border-radius:24px;padding:1px;
-  background:linear-gradient(135deg,transparent 40%,rgba(77,243,255,.5),transparent 70%);
-  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
-  -webkit-mask-composite:xor;mask-composite:exclude;opacity:0;transition:opacity .4s var(--ease);
-}
-.card:hover{transform:translateY(-8px);border-color:rgba(77,243,255,.35);box-shadow:0 25px 60px rgba(0,0,0,.5),0 0 40px rgba(77,243,255,.1)}
-.card:hover::before{opacity:1}
-.icon{
-  width:56px;height:56px;border-radius:16px;display:grid;place-items:center;font-size:1.6rem;
-  background:linear-gradient(135deg,rgba(77,243,255,.15),rgba(168,85,247,.18));border:1px solid rgba(77,243,255,.2);
-  color:var(--cyan-soft);
-}
-.card h3{font-size:1.3rem;font-weight:800}
-.card p{color:var(--text-2);font-size:.94rem;flex:1}
-.card .fit{color:var(--text);font-size:.85rem;opacity:.8}
-.codeword{
-  align-self:flex-start;padding:8px 14px;border-radius:10px;
-  background:rgba(251,191,36,.08);border:1px dashed rgba(251,191,36,.4);color:#fde68a;
-  font-family:'JetBrains Mono',monospace;font-size:.85rem;font-weight:700;
-}
-.card .cta{margin-top:auto}
+.card:hover{transform:translateY(-6px);border-color:rgba(77,243,255,.35);box-shadow:0 25px 60px rgba(0,0,0,.5)}
+.icon{width:52px;height:52px;border-radius:14px;display:grid;place-items:center;font-size:1.5rem;background:linear-gradient(135deg,rgba(77,243,255,.14),rgba(168,85,247,.18));border:1px solid rgba(77,243,255,.2);color:var(--cyan)}
+.card h3{font-size:1.25rem;font-weight:800}
+.card p{color:var(--muted);font-size:.94rem;flex:1}
+.fit{color:var(--text);font-size:.85rem;opacity:.8}
+.codeword{align-self:flex-start;padding:7px 13px;border-radius:10px;background:rgba(251,191,36,.08);border:1px dashed rgba(251,191,36,.4);color:#fde68a;font-family:monospace;font-size:.83rem;font-weight:700}
+.price-tag{align-self:flex-start;padding:7px 14px;border-radius:10px;background:rgba(77,243,255,.08);border:1px solid rgba(77,243,255,.22);color:var(--cyan);font-weight:800;font-size:.9rem}
+.card .cta{margin-top:auto;align-self:flex-start}
 
-/* ============ CALCULATOR ============ */
-.calc{
-  background:var(--bg-card);border:1px solid var(--stroke);border-radius:30px;padding:38px;
-  display:grid;grid-template-columns:1.1fr .9fr;gap:38px;box-shadow:var(--shadow-lg);backdrop-filter:blur(20px);
-}
-.calc label{display:block;font-weight:700;margin-bottom:10px;color:#fff;font-size:.95rem}
-.field{margin-bottom:24px}
+/* Before/After honest block */
+.ba-wrap{max-width:860px;margin:0 auto;background:var(--card);border:1px solid var(--stroke);border-radius:28px;padding:36px;text-align:center;backdrop-filter:blur(16px)}
+.ba-wrap p{color:var(--muted);max-width:560px;margin:10px auto 26px}
+.ba-points{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-bottom:28px;text-align:left}
+.ba-point{padding:16px;border-radius:14px;background:rgba(255,255,255,.03);border:1px solid var(--stroke)}
+.ba-point strong{display:block;margin-bottom:6px;color:#fff}
+.ba-point span{color:var(--muted);font-size:.88rem}
+
+/* Calculator */
+.calc{background:var(--card);border:1px solid var(--stroke);border-radius:28px;padding:36px;display:grid;grid-template-columns:1.1fr .9fr;gap:36px;box-shadow:0 30px 80px rgba(0,0,0,.5);backdrop-filter:blur(20px)}
+.field{margin-bottom:22px}
+.field label{display:block;font-weight:700;margin-bottom:10px;color:#fff;font-size:.95rem}
 .opts{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
-.opt{
-  padding:14px;border-radius:14px;background:rgba(255,255,255,.03);border:1px solid var(--stroke);
-  text-align:center;cursor:pointer;font-weight:600;font-size:.92rem;transition:.2s var(--ease);
-}
-.opt:hover{border-color:var(--stroke-strong)}
-.opt.active{background:rgba(77,243,255,.1);border-color:var(--cyan-soft);color:var(--cyan-soft);box-shadow:0 0 0 3px rgba(77,243,255,.06) inset}
-input[type=range]{width:100%;accent-color:var(--cyan-soft);height:6px}
-.input{width:100%;padding:13px 14px;border-radius:12px;background:rgba(0,0,0,.3);border:1px solid var(--stroke);color:#fff;font-size:.95rem;outline:none;transition:border-color .2s}
-.input:focus{border-color:var(--cyan-soft)}
-.calc-result{background:rgba(0,0,0,.35);border:1px solid var(--stroke);border-radius:24px;padding:32px;display:flex;flex-direction:column;justify-content:space-between;gap:20px}
-.price{font-size:clamp(2.4rem,4vw,3.4rem);font-weight:900;background:var(--grad-primary);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;line-height:1;margin:6px 0}
-.hint{color:var(--text-3);font-size:.84rem;line-height:1.5}
-.order-msg{width:100%;min-height:130px;background:#0a0d17;border:1px solid var(--stroke);border-radius:14px;color:#fff;padding:12px;font-family:monospace;font-size:.85rem;resize:vertical}
-.actions-row{display:flex;gap:10px}
+.opt{padding:13px;border-radius:14px;background:rgba(255,255,255,.03);border:1px solid var(--stroke);text-align:center;cursor:pointer;font-weight:600;font-size:.9rem;transition:.2s}
+.opt:hover{border-color:var(--stroke2)}
+.opt.active{background:rgba(77,243,255,.1);border-color:var(--cyan);color:var(--cyan)}
+input[type=range]{width:100%;accent-color:var(--cyan);height:6px}
+.input{width:100%;padding:12px 14px;border-radius:12px;background:rgba(0,0,0,.3);border:1px solid var(--stroke);color:#fff;font-size:.95rem;outline:none}
+.input:focus{border-color:var(--cyan)}
+.calc-res{background:rgba(0,0,0,.35);border:1px solid var(--stroke);border-radius:22px;padding:28px;display:flex;flex-direction:column;justify-content:space-between;gap:18px}
+.price{font-size:clamp(2.2rem,4vw,3rem);font-weight:900;background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;line-height:1;margin:6px 0}
+.hint{color:var(--muted2);font-size:.82rem;line-height:1.5}
+.msg{width:100%;min-height:120px;background:#0a0d17;border:1px solid var(--stroke);border-radius:12px;color:#fff;padding:12px;font-family:monospace;font-size:.83rem;resize:vertical}
+.ar{display:flex;gap:10px}
 
-/* ============ PORTFOLIO ============ */
-.portfolio{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:24px}
-.work{
-  background:var(--bg-card);border:1px solid var(--stroke);border-radius:22px;overflow:hidden;cursor:pointer;
-  transition:.35s var(--ease);backdrop-filter:blur(14px);position:relative;
-}
-.work:hover{transform:translateY(-8px);border-color:rgba(77,243,255,.4);box-shadow:0 25px 50px rgba(0,0,0,.5),0 0 40px rgba(77,243,255,.12)}
-.work .img-wrap{position:relative;aspect-ratio:4/3;overflow:hidden}
-.work img{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease)}
-.work:hover img{transform:scale(1.06)}
-.work .img-wrap::after{content:"🔍 Посмотреть";position:absolute;inset:auto 0 0 0;padding:10px;background:linear-gradient(0deg,rgba(0,0,0,.8),transparent);color:#fff;font-size:.8rem;font-weight:700;text-align:center;opacity:0;transition:opacity .3s}
-.work:hover .img-wrap::after{opacity:1}
-.work-body{padding:22px;display:flex;flex-direction:column;gap:8px}
-.work-tag{color:var(--cyan-soft);font-size:.78rem;font-weight:800;letter-spacing:.5px;text-transform:uppercase}
-.work h4{font-size:1.05rem;font-weight:800;line-height:1.3}
-.work-desc{color:var(--text-2);font-size:.86rem;flex:1;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-.work-meta{display:flex;justify-content:space-between;align-items:center;padding-top:12px;border-top:1px solid var(--stroke);font-size:.78rem;color:var(--text-3)}
-.work-meta .arrow{color:var(--cyan-soft);font-weight:700}
-.load-more{text-align:center;margin-top:30px}
+/* Portfolio */
+.portfolio{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:22px}
+.work{background:var(--card);border:1px solid var(--stroke);border-radius:20px;overflow:hidden;transition:.3s;backdrop-filter:blur(14px)}
+.work:hover{transform:translateY(-6px);border-color:rgba(77,243,255,.35);box-shadow:0 20px 45px rgba(0,0,0,.4)}
+.work-img{aspect-ratio:1/1;overflow:hidden;background:#0a0d17}
+.work-img img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.work:hover .work-img img{transform:scale(1.05)}
+.work-body{padding:20px;display:flex;flex-direction:column;gap:8px}
+.work-tag{color:var(--cyan);font-size:.76rem;font-weight:800;letter-spacing:.5px;text-transform:uppercase}
+.work h4{font-size:1rem;font-weight:700;line-height:1.3}
+.work-desc{color:var(--muted);font-size:.86rem}
+.work-meta{display:flex;justify-content:space-between;align-items:center;padding-top:10px;border-top:1px solid var(--stroke);font-size:.78rem;color:var(--muted2)}
+.work-meta a{color:var(--cyan);font-weight:700;text-decoration:none}
 
-/* ============ GUARANTEES / PROCESS / REVIEWS ============ */
-.icon-lg{font-size:2rem;margin-bottom:12px}
-.step-badge{
-  width:42px;height:42px;border-radius:12px;background:var(--grad-primary);color:#03121a;
-  display:grid;place-items:center;font-weight:900;font-size:1.1rem;margin-bottom:14px;
-  box-shadow:0 8px 20px rgba(77,243,255,.3);
-}
-.review{background:var(--bg-card);border:1px solid var(--stroke);border-radius:22px;padding:26px;transition:.3s var(--ease);backdrop-filter:blur(12px)}
-.review:hover{transform:translateY(-4px);border-color:rgba(168,85,247,.3);box-shadow:0 20px 40px rgba(0,0,0,.35)}
-.review-head{display:flex;align-items:center;gap:12px;margin-bottom:12px}
-.ava{
-  width:46px;height:46px;border-radius:50%;display:grid;place-items:center;color:#fff;font-weight:800;font-size:1.05rem;
-  background:var(--grad-primary);flex-shrink:0;
-}
-.review-name{font-weight:700}
-.review-svc{color:var(--cyan-soft);font-size:.78rem;font-weight:600}
-.stars{color:var(--gold);letter-spacing:2px;margin-bottom:10px;font-size:.9rem}
-.review-text{color:var(--text-2);font-size:.9rem;line-height:1.6}
-.cta-block{
-  max-width:1100px;margin:60px auto 80px;padding:60px 40px;border-radius:32px;text-align:center;
-  background:
-    radial-gradient(500px 300px at 20% 30%,rgba(77,243,255,.18),transparent),
-    radial-gradient(500px 300px at 80% 70%,rgba(168,85,247,.2),transparent),
-    rgba(255,255,255,.03);
-  border:1px solid var(--stroke);position:relative;overflow:hidden;
-}
-.cta-block h2{font-size:clamp(1.8rem,3.2vw,2.6rem);font-weight:900;margin-bottom:14px;letter-spacing:-.8px}
-.cta-block p{color:var(--text-2);max-width:640px;margin:0 auto 26px}
+/* Guarantees / How it works */
+.step{width:40px;height:40px;border-radius:12px;background:var(--grad);color:#03121a;display:grid;place-items:center;font-weight:900;margin-bottom:14px;box-shadow:0 8px 20px rgba(77,243,255,.25)}
+.icon-lg{font-size:1.8rem;margin-bottom:8px}
 
-/* ============ FAQ ============ */
-.faq{max-width:860px;margin:0 auto;display:flex;flex-direction:column;gap:12px}
-.faq-item{background:var(--bg-card);border:1px solid var(--stroke);border-radius:18px;overflow:hidden;transition:border-color .25s;backdrop-filter:blur(12px)}
-.faq-item[open]{border-color:rgba(77,243,255,.4);box-shadow:0 10px 30px rgba(77,243,255,.08)}
-.faq-item summary{
-  list-style:none;cursor:pointer;padding:20px 24px;display:flex;justify-content:space-between;align-items:center;gap:20px;
-  font-weight:700;font-size:1.02rem;
-}
-.faq-item summary::-webkit-details-marker{display:none}
-.faq-item summary::after{content:"+";font-size:1.4rem;color:var(--cyan-soft);font-weight:300;transition:transform .25s}
-.faq-item[open] summary::after{transform:rotate(45deg)}
-.faq-item .answer{padding:0 24px 22px;color:var(--text-2);font-size:.94rem;line-height:1.7}
+/* CTA final */
+.final{max-width:1000px;margin:40px auto 60px;padding:50px 30px;border-radius:30px;text-align:center;
+  background:radial-gradient(500px 300px at 20% 30%,rgba(77,243,255,.16),transparent),radial-gradient(500px 300px at 80% 70%,rgba(168,85,247,.18),transparent),rgba(255,255,255,.03);
+  border:1px solid var(--stroke)}
+.final h2{font-size:clamp(1.7rem,3vw,2.4rem);font-weight:900;margin-bottom:12px;letter-spacing:-.8px}
+.final p{color:var(--muted);max-width:600px;margin:0 auto 24px}
 
-/* ============ FLOATING VK BTN ============ */
-.floating-vk{
-  position:fixed;right:24px;bottom:24px;z-index:999;
-  width:62px;height:62px;border-radius:50%;display:grid;place-items:center;
-  background:var(--grad-vk);color:#fff;text-decoration:none;
-  box-shadow:0 10px 30px rgba(0,119,255,.5);animation:floatVk 3s ease-in-out infinite;
-  transition:transform .25s var(--ease);
-}
-.floating-vk:hover{transform:scale(1.1) translateY(-4px)}
-.floating-vk svg{width:30px;height:30px;fill:#fff}
-@keyframes floatVk{0%,100%{box-shadow:0 10px 30px rgba(0,119,255,.5)}50%{box-shadow:0 10px 40px rgba(0,119,255,.85),0 0 0 14px rgba(0,119,255,.12)}}
-.floating-hint{
-  position:fixed;right:100px;bottom:40px;z-index:998;
-  background:#0c1020;color:#fff;padding:10px 16px;border-radius:12px;font-size:.85rem;font-weight:700;
-  box-shadow:0 10px 30px rgba(0,0,0,.4);border:1px solid var(--stroke);
-  opacity:0;pointer-events:none;transition:all .3s var(--ease);transform:translateX(10px);
-}
-.floating-vk:hover + .floating-hint{opacity:1;transform:translateX(0)}
+/* VK plug block (отзывы, до/после) */
+.vkplug{max-width:720px;margin:0 auto;background:var(--card);border:1px solid var(--stroke);border-radius:24px;padding:36px;text-align:center;backdrop-filter:blur(16px)}
+.vkplug .vklogo{width:64px;height:64px;border-radius:18px;background:var(--gradvk);display:grid;place-items:center;margin:0 auto 18px;color:#fff}
+.vkplug h3{font-size:1.3rem;margin-bottom:8px}
+.vkplug p{color:var(--muted);margin-bottom:20px}
 
-/* ============ FOOTER ============ */
-footer{background:linear-gradient(180deg,transparent,rgba(0,0,0,.4));border-top:1px solid var(--stroke);padding:70px max(5%,24px) 40px;text-align:center}
-.footer-logo{font-size:1.35rem;font-weight:900;margin-bottom:10px;display:inline-block}
-.footer-sub{color:var(--text-2);max-width:600px;margin:0 auto 24px;font-size:.92rem}
-.footer-links{display:flex;flex-wrap:wrap;justify-content:center;gap:18px;margin-bottom:20px}
-.footer-links a{color:var(--cyan-soft);text-decoration:none;font-weight:600;font-size:.9rem;transition:.2s}
+/* Footer */
+footer{border-top:1px solid var(--stroke);padding:60px max(5%,20px) 36px;text-align:center;background:linear-gradient(180deg,transparent,rgba(0,0,0,.3))}
+.footer-logo{font-size:1.3rem;font-weight:900;margin-bottom:10px}
+.footer-sub{color:var(--muted);max-width:600px;margin:0 auto 20px;font-size:.9rem}
+.footer-links{display:flex;flex-wrap:wrap;justify-content:center;gap:16px;margin-bottom:16px}
+.footer-links a{color:var(--cyan);text-decoration:none;font-weight:600;font-size:.88rem}
 .footer-links a:hover{text-decoration:underline}
-.footer-meta{color:var(--text-3);font-size:.82rem}
+.fm{color:var(--muted2);font-size:.8rem}
 
-/* ============ MODAL ============ */
-.modal{position:fixed;inset:0;background:rgba(0,0,0,.85);backdrop-filter:blur(10px);z-index:2000;display:none;align-items:center;justify-content:center;padding:20px}
-.modal[open]{display:flex}
-.modal-body{max-width:860px;width:100%;background:var(--bg-card);border:1px solid var(--stroke);border-radius:28px;padding:30px;position:relative;max-height:90vh;overflow-y:auto}
-.modal-close{position:absolute;top:18px;right:22px;background:transparent;border:0;color:#fff;font-size:2rem;cursor:pointer;line-height:1}
-.modal-body img{width:100%;border-radius:18px;margin-bottom:18px}
-.modal-body h3{font-size:1.4rem;color:var(--cyan-soft);margin-bottom:8px}
+/* Floating VK button */
+.fvk{position:fixed;right:22px;bottom:22px;z-index:99;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;background:var(--gradvk);color:#fff;text-decoration:none;box-shadow:0 10px 28px rgba(0,119,255,.5);transition:.25s;animation:fvkPulse 2.8s infinite}
+.fvk:hover{transform:scale(1.08) translateY(-3px)}
+.fvk svg{width:28px;height:28px;fill:#fff}
+@keyframes fvkPulse{0%,100%{box-shadow:0 10px 28px rgba(0,119,255,.5)}50%{box-shadow:0 10px 40px rgba(0,119,255,.85),0 0 0 12px rgba(0,119,255,.12)}}
 
-/* ============ ANIMATIONS ON SCROLL ============ */
-.reveal{opacity:0;transform:translateY(30px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
-.reveal.in{opacity:1;transform:none}
-
-/* ============ RESPONSIVE ============ */
-@media (max-width:1024px){
-  .hero{grid-template-columns:1fr;gap:40px;padding-top:130px}
-  .hero-preview{max-width:420px;margin:0 auto}
-  .hero-stats{grid-template-columns:repeat(2,1fr)}
-  .calc{grid-template-columns:1fr}
+@media (max-width:900px){
   .nav-links{display:none}
-  .burger{display:block}
-  .nav-links.mobile{
-    display:flex;flex-direction:column;position:fixed;top:76px;right:0;left:0;
-    background:rgba(8,10,20,.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--stroke);
-    padding:20px;gap:4px;
-  }
-}
-@media (max-width:640px){
-  section{padding:80px max(5%,20px)}
-  .hero-stats{grid-template-columns:repeat(2,1fr);gap:10px}
-  .stat-item h3{font-size:1.4rem}
-  .promo{padding:20px;border-radius:20px;text-align:center;flex-direction:column;align-items:stretch}
-  .calc{padding:24px;border-radius:20px}
-  .grid.c4,.grid.c3{grid-template-columns:1fr}
-  .cta-block{padding:40px 22px;border-radius:22px}
-  .floating-vk{right:16px;bottom:20px;width:56px;height:56px}
-  .floating-vk svg{width:26px;height:26px}
-  .floating-hint{display:none}
-  .comparison-wrap{padding:14px;border-radius:20px}
-  .comp-knob{width:42px;height:42px;font-size:1rem}
+  .calc{grid-template-columns:1fr;padding:24px;border-radius:20px}
+  .hero{padding-top:120px}
+  .c4,.c3{grid-template-columns:1fr}
+  .fvk{right:14px;bottom:18px;width:52px;height:52px}
 }
 </style>
 </head>
 <body>
 
-<nav id="nav">
+<nav>
   <a href="#" class="logo">
     <div class="logo-badge">✦</div>
-    <span>PHOTO <span style="color:var(--cyan-soft);font-weight:500">AI STUDIO</span></span>
+    <span>PHOTO <span style="color:var(--cyan);font-weight:500">AI STUDIO</span></span>
   </a>
-  <ul class="nav-links" id="navLinks">
-    <li><a href="#slider">До/После</a></li>
+  <ul class="nav-links">
     <li><a href="#services">Услуги</a></li>
+    <li><a href="#before-after">До/После</a></li>
     <li><a href="#calculator">Калькулятор</a></li>
-    <li><a href="#portfolio">Портфолио</a></li>
-    <li><a href="#guarantees">Гарантии</a></li>
-    <li><a href="#reviews">Отзывы</a></li>
-    <li><a href="#faq">Вопросы</a></li>
-    <li><a href="https://vk.com/im?sel=-239853638" target="_blank" class="cta">💙 Заказать в ВК</a></li>
+    <li><a href="#portfolio">Готовые работы</a></li>
+    <li><a href="#process">Как заказать</a></li>
   </ul>
-  <a href="https://vk.com/im?sel=-239853638" target="_blank" class="btn-vk">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M15.07 2H8.93C3.33 2 2 3.33 2 8.93v6.14C2 20.67 3.33 22 8.93 22h6.14c5.6 0 6.93-1.33 6.93-6.93V8.93C22 3.33 20.67 2 15.07 2zm3.39 13.62h-1.44c-.58 0-.76-.46-1.81-1.51-.91-.88-1.3-.99-1.52-.99-.31 0-.41.09-.41.53v1.38c0 .38-.12.59-1.12.59-1.65 0-3.48-1-4.78-2.88-1.96-2.76-2.5-4.83-2.5-5.26 0-.24.09-.46.54-.46h1.44c.41 0 .57.19.73.63.8 2.31 2.14 4.34 2.69 4.34.21 0 .31-.1.31-.64V9.82c-.06-1.12-.65-1.22-.65-1.62 0-.19.16-.38.42-.38h2.27c.31 0 .42.16.42.52v2.85c0 .31.14.42.23.42.21 0 .38-.11.76-.49 1.18-1.32 2.01-3.34 2.01-3.34.11-.24.4-.48.95-.48h1.44c.43 0 .52.22.42.52-.18.84-1.96 3.36-2.14 3.63-.16.23-.23.34 0 .64.16.21.68.67 1.03 1.08.64.75 1.13 1.38 1.26 1.82.14.43-.08.66-.51.66z"/></svg>
-    Написать в ВК
-  </a>
+  <a href="https://vk.com/im?sel=-239853638" target="_blank" class="btn-vk">💙 Написать в ВК</a>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
-  <span class="blob" style="width:400px;height:400px;background:#4df3ff;top:-60px;left:-80px"></span>
-  <span class="blob" style="width:350px;height:350px;background:#a855f7;bottom:-80px;right:-60px;animation-delay:-5s"></span>
-  <div class="hero-content">
-    <span class="eyebrow"><span class="dot"></span> Премиальная AI-обработка · онлайн</span>
-    <h1>Ваши фотографии — <span class="gradient-text">как из дорогой студии</span>, за 15 минут</h1>
-    <p class="lead">Аккуратная AI-ретушь портретов, деловые бизнес-фото, нейро-аватары и реставрация старых снимков. Сохраняем естественность лица и узнаваемость — без эффекта «пластика».</p>
-
-    <div class="trust-row">
-      <span class="chip check">✓ От 300 ₽</span>
-      <span class="chip check">✓ От 15 минут</span>
-      <span class="chip check">✓ AI + ручная доработка</span>
-      <span class="chip check">✓ Фото не публикуем без разрешения</span>
-    </div>
-
-    <div class="live-chip" id="liveChip">
-      <span class="live-dot"></span>
-      <span id="liveText">Мастер онлайн · отвечаю за пару минут</span>
-    </div>
-
-    <div class="hero-stats">
-      <div class="stat-item"><h3>5 000+</h3><span>Обработанных фото</span></div>
-      <div class="stat-item"><h3>3+ года</h3><span>С 2022 года</span></div>
-      <div class="stat-item"><h3>4.9 ★</h3><span>76 отзывов в ВК</span></div>
-      <div class="stat-item"><h3>98%</h3><span>Возвращаются</span></div>
-    </div>
-
-    <div class="hero-actions">
-      <a href="#calculator" class="btn-primary">Рассчитать стоимость →</a>
-      <a href="#slider" class="btn-secondary">Сравнить До/После</a>
-      <a href="https://vk.com/im?sel=-239853638" target="_blank" class="btn-ghost">💙 Отправить фото</a>
-    </div>
+  <span class="eyebrow"><span class="dot"></span> Обработка фото онлайн · через ВКонтакте</span>
+  <h1>Аккуратная <span class="g">AI-ретушь</span>, бизнес-портреты и реставрация старых снимков</h1>
+  <p class="lead">Делаем естественную обработку без «пластиковой кожи», создаём деловые портреты и нейро-аватары, восстанавливаем старые семейные фото. Заказ и выдача результата — через сообщения сообщества ВКонтакте.</p>
+  <div class="chips">
+    <span class="chip ok">✓ От 300 ₽</span>
+    <span class="chip ok">✓ От 15 минут</span>
+    <span class="chip ok">✓ AI + ручная проверка</span>
+    <span class="chip ok">✓ Фото не публикуем без разрешения</span>
   </div>
-
-  <div class="hero-preview reveal">
-    <img src="assets/images/photo-ai-be9879b574518155.jpg" alt="AI-ретушь бизнес-портрета" loading="eager">
-    <div class="preview-badge">
-      <div>
-        <strong>vk.com/retouch_ai_online</strong><br>
-        <small>Официальное сообщество ВКонтакте</small>
-      </div>
-      <span class="preview-tag">online</span>
-    </div>
+  <div class="hero-stats">
+    <div class="stat"><h3>12+</h3><span>работ в каталоге</span></div>
+    <div class="stat"><h3>от 15 мин</h3><span>срок выполнения</span></div>
+    <div class="stat"><h3>4 услуги</h3><span>от 300 до 600 ₽</span></div>
+    <div class="stat"><h3>в ВК</h3><span>отзывы и связь</span></div>
   </div>
-</section>
-
-<!-- PROMO -->
-<section style="padding-top:0">
-  <div class="promo reveal">
-    <div>
-      <h3><span class="promo-tag">🔥 Июль · акция</span> Бесплатная цветокоррекция ко второму фото</h3>
-      <p>При заказе от 2 фото в июле 2026 — вторая ретушь со скидкой 20% + бесплатная цветокоррекция. Кодовое слово в ВК: <b>«ИЮЛЬ26»</b>.</p>
-    </div>
-    <a href="https://vk.com/im?sel=-239853638&message=Здравствуйте!%20Хочу%20акцию%20ИЮЛЬ26" target="_blank" class="btn-primary">Написать в ВК ✈</a>
+  <div class="hero-actions">
+    <a href="#calculator" class="btn-primary">Рассчитать стоимость →</a>
+    <a href="https://vk.com/retouch_ai_online" target="_blank" rel="noopener" class="btn-secondary">Открыть группу ВК</a>
   </div>
-</section>
-
-<!-- COMPARISON SLIDER -->
-<section id="slider" class="reveal">
-  <div class="section-header">
-    <span class="eyebrow">До / После</span>
-    <h2>Сравните <span class="gradient-text">сами</span></h2>
-    <p>Передвиньте ползунок и посмотрите, как меняется фото: выравнивается свет, цвет, убираются дефекты — но сохраняются черты лица и естественная текстура кожи.</p>
-  </div>
-
-  <div class="pills" id="sliderTabs">
-    <button class="pill active" data-i="0">Естественная ретушь</button>
-    <button class="pill" data-i="1">Бизнес-портрет</button>
-    <button class="pill" data-i="2">Реставрация</button>
-    <button class="pill" data-i="3">Нейро-аватар</button>
-  </div>
-
-  <div class="comparison-wrap">
-    <div class="comparison" id="comp">
-      <img class="comp-after" id="compAfter" src="assets/images/photo-ai-e659c041a888d653.jpg" alt="После обработки">
-      <img class="comp-before" id="compBefore" src="assets/images/photo-ai-be9879b574518155.jpg" alt="Исходник">
-      <div class="comp-handle" id="compHandle"><div class="comp-knob">↔</div></div>
-    </div>
-    <div class="comp-labels"><span class="b">◀ Исходник</span><span class="a">Результат ▶</span></div>
-    <p class="comp-desc" id="compDesc">Выравнивание тона кожи, устранение мелких дефектов и улучшение освещения без эффекта «маски».</p>
-  </div>
+  <p class="note">Всё общение, приём фото и выдача готовых работ — только через официальную группу ВКонтакте <b style="color:#fff">vk.com/retouch_ai_online</b>. Остерегайтесь мошенников.</p>
 </section>
 
 <!-- SERVICES -->
-<section id="services" class="reveal">
+<section id="services">
   <div class="section-header">
-    <span class="eyebrow">Услуги</span>
-    <h2>Чем мы <span class="gradient-text">поможем</span></h2>
-    <p>Все услуги оказываются дистанционно. Отправьте фото в сообщения группы ВК, укажите кодовое слово — согласуем стиль и стоимость до начала работы.</p>
+    <span class="eyebrow" style="margin-left:auto;margin-right:auto">Услуги</span>
+    <h2>Что можно <span class="g">заказать</span></h2>
+    <p>Четыре основные услуги. Выберите подходящую, при отправке фото в ВК укажите её кодовое слово.</p>
   </div>
   <div class="grid c4">
     <div class="card">
       <div class="icon">✨</div>
       <h3>Естественная AI-ретушь</h3>
-      <p class="fit">Аватары, соцсети, анкеты, dating-профили.</p>
-      <p>Выровняем тон кожи, смягчим тени под глазами, поправим свет и цвет — без «пластиковой» маски на лице.</p>
-      <div class="codeword">«Ретушь» · от 300 ₽</div>
-      <a href="#calculator" class="btn-secondary cta" onclick="pickService('Ретушь портрета','Ретушь',300)">Заказать</a>
+      <p>Выравнивание тона кожи, мягкая цветокоррекция, устранение дефектов — без эффекта «маски» на лице.</p>
+      <p class="fit">Для аватарок, соцсетей, анкет, знакомств.</p>
+      <div class="codeword">Код: «Ретушь»</div>
+      <div class="price-tag">от 300 ₽</div>
+      <a href="#calculator" class="btn-secondary cta" onclick="pick(0)">Заказать →</a>
     </div>
     <div class="card">
       <div class="icon">👔</div>
-      <h3>Деловой портрет</h3>
-      <p class="fit">Резюме, HH, LinkedIn, сайт компании, бейдж.</p>
-      <p>Превратим домашний снимок в студийный деловой портрет: фон, свет, костюм — без потери сходства.</p>
-      <div class="codeword">«Деловое» · от 450 ₽</div>
-      <a href="#calculator" class="btn-secondary cta" onclick="pickService('Деловое фото','Деловое',450)">Заказать</a>
+      <h3>Деловой бизнес-портрет</h3>
+      <p>Превращаем домашний снимок в аккуратное деловое фото: нейтральный фон, ровный свет, профессиональный вид.</p>
+      <p class="fit">Для резюме, HH, LinkedIn, сайта компании, бейджей.</p>
+      <div class="codeword">Код: «Деловое»</div>
+      <div class="price-tag">от 450 ₽</div>
+      <a href="#calculator" class="btn-secondary cta" onclick="pick(1)">Заказать →</a>
     </div>
     <div class="card">
       <div class="icon">🎨</div>
-      <h3>Нейро-образы</h3>
-      <p class="fit">Подарки, личный бренд, креативные аватары.</p>
-      <p>Cinematic, fashion, luxury, cyber, fantasy, business — выразительный образ с сохранением черт лица.</p>
-      <div class="codeword">«Нейро» · от 500 ₽</div>
-      <a href="#calculator" class="btn-secondary cta" onclick="pickService('Нейро-аватар','Нейро',500)">Заказать</a>
+      <h3>AI-стилизация и нейро-аватары</h3>
+      <p>Создаём выразительные образы в стилях cinematic, luxury, cyber, fantasy, аниме и других — с сохранением черт лица.</p>
+      <p class="fit">Для соцсетей, личного бренда, подарков.</p>
+      <div class="codeword">Код: «Нейро»</div>
+      <div class="price-tag">от 500 ₽</div>
+      <a href="#calculator" class="btn-secondary cta" onclick="pick(2)">Заказать →</a>
     </div>
     <div class="card">
       <div class="icon">🕰️</div>
-      <h3>Реставрация фото</h3>
-      <p class="fit">Семейные архивы, памятные даты, подарки.</p>
-      <p>Уберём трещины, пятна, заломы и шум, вернём резкость лиц, при необходимости — бережная колоризация.</p>
-      <div class="codeword">«Реставрация» · от 600 ₽</div>
-      <a href="#calculator" class="btn-secondary cta" onclick="pickService('Реставрация','Реставрация',600)">Заказать</a>
+      <h3>Реставрация старых фото</h3>
+      <p>Удаление трещин, пятен и заломов, повышение резкости лиц, бережная колоризация при необходимости.</p>
+      <p class="fit">Для семейных архивов и памятных дат.</p>
+      <div class="codeword">Код: «Реставрация»</div>
+      <div class="price-tag">от 600 ₽</div>
+      <a href="#calculator" class="btn-secondary cta" onclick="pick(3)">Заказать →</a>
+    </div>
+  </div>
+
+  <!-- ДОПОЛНИТЕЛЬНЫЕ УСЛУГИ: полиграфия и дизайн -->
+  <div style="max-width:1100px;margin:0 auto;background:linear-gradient(150deg,rgba(77,243,255,.08),rgba(168,85,247,.12));border:1px solid rgba(77,243,255,.3);border-radius:22px;padding:28px 32px;backdrop-filter:blur(16px);position:relative;overflow:hidden">
+    <div style="position:absolute;top:-60px;right:-60px;width:200px;height:200px;border-radius:50%;background:radial-gradient(circle,rgba(251,191,36,.15),transparent 70%);pointer-events:none"></div>
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px">
+      <span style="background:rgba(251,191,36,.15);color:#fde68a;padding:4px 12px;border-radius:8px;font-size:.76rem;font-weight:800;text-transform:uppercase;letter-spacing:.5px">🎨 ПОМИМО ОБРАБОТКИ ФОТО</span>
+    </div>
+    <h3 style="font-size:1.35rem;font-weight:800;margin-bottom:6px">Разработка дизайна и полиграфия</h3>
+    <p style="color:var(--muted);font-size:.93rem;margin-bottom:20px;max-width:760px">Кроме обработки фото мы делаем полный пакет визуальных материалов для вашего бизнеса — от логотипа до готовой полиграфии под печать. Цены обсуждаются индивидуально под задачу.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px">
+      <div style="padding:14px;border-radius:14px;background:rgba(0,0,0,.25);border:1px solid var(--stroke);display:flex;gap:12px;align-items:flex-start">
+        <div style="width:40px;height:40px;border-radius:10px;background:rgba(251,191,36,.12);display:grid;place-items:center;font-size:1.2rem;flex-shrink:0">🔤</div>
+        <div><div style="font-weight:700;font-size:.95rem;margin-bottom:2px">Логотипы</div><div style="color:var(--muted2);font-size:.8rem">Разработка логотипа, фирменный стиль</div></div>
+      </div>
+      <div style="padding:14px;border-radius:14px;background:rgba(0,0,0,.25);border:1px solid var(--stroke);display:flex;gap:12px;align-items:flex-start">
+        <div style="width:40px;height:40px;border-radius:10px;background:rgba(77,243,255,.12);display:grid;place-items:center;font-size:1.2rem;flex-shrink:0">💳</div>
+        <div><div style="font-weight:700;font-size:.95rem;margin-bottom:2px">Визитки</div><div style="color:var(--muted2);font-size:.8rem">Дизайн и подготовка под печать</div></div>
+      </div>
+      <div style="padding:14px;border-radius:14px;background:rgba(0,0,0,.25);border:1px solid var(--stroke);display:flex;gap:12px;align-items:flex-start">
+        <div style="width:40px;height:40px;border-radius:10px;background:rgba(168,85,247,.12);display:grid;place-items:center;font-size:1.2rem;flex-shrink:0">📄</div>
+        <div><div style="font-weight:700;font-size:.95rem;margin-bottom:2px">Листовки</div><div style="color:var(--muted2);font-size:.8rem">Флаеры, буклеты, постеры</div></div>
+      </div>
+      <div style="padding:14px;border-radius:14px;background:rgba(0,0,0,.25);border:1px solid var(--stroke);display:flex;gap:12px;align-items:flex-start">
+        <div style="width:40px;height:40px;border-radius:10px;background:rgba(236,72,153,.12);display:grid;place-items:center;font-size:1.2rem;flex-shrink:0">🪧</div>
+        <div><div style="font-weight:700;font-size:.95rem;margin-bottom:2px">Баннеры</div><div style="color:var(--muted2);font-size:.8rem">Для соцсетей, сайтов, наружки</div></div>
+      </div>
+    </div>
+    <div style="margin-top:20px">
+      <a href="https://vk.com/im?sel=-239853638&message=Здравствуйте!%20Хочу%20заказать%20разработку%20дизайна.%20Расскажите%20подробнее." target="_blank" class="btn-primary" style="padding:11px 24px;font-size:.92rem">✉ Обсудить дизайн в ВК →</a>
     </div>
   </div>
 </section>
 
-<!-- CALCULATOR -->
-<section id="calculator" class="reveal">
+<!-- BEFORE/AFTER honest block -->
+<section id="before-after">
   <div class="section-header">
-    <span class="eyebrow">Калькулятор</span>
-    <h2>Рассчитайте <span class="gradient-text">стоимость</span></h2>
-    <p>Выберите параметры — калькулятор сформирует готовое сообщение для отправки мастеру в ВК.</p>
+    <span class="eyebrow" style="margin-left:auto;margin-right:auto">До / После</span>
+    <h2>Реальные сравнения — <span class="g">в группе ВК</span></h2>
+    <p>Я не подставляю на сайт фейковые пары «до/после» из разных фотографий. Все реальные сравнения работ выложены в альбомах сообщества ВКонтакте — там клиент может открыть каждую пару и посмотреть крупно.</p>
+  </div>
+  <div class="ba-wrap">
+    <div class="ba-points">
+      <div class="ba-point"><strong>🧴 Ретушь</strong><span>Как убираются дефекты, выравнивается кожа</span></div>
+      <div class="ba-point"><strong>👔 Бизнес</strong><span>Замена фона, света и одежды на исходном фото</span></div>
+      <div class="ba-point"><strong>🎨 Нейро</strong><span>Сравнение исходника и готового AI-образа</span></div>
+      <div class="ba-point"><strong>🕰️ Реставрация</strong><span>Как выглядят старые фото до и после</span></div>
+    </div>
+    <p style="margin-bottom:22px">Откройте альбомы сообщества, чтобы посмотреть реальные пары крупно:</p>
+    <a href="https://vk.com/retouch_ai_online" target="_blank" rel="noopener" class="btn-primary">📸 Открыть альбомы в ВК ↗</a>
+    <p class="hint" style="margin-top:14px">В будущем, когда у вас появятся настоящие пары «исходник + готовый» на один и тот же человек — их можно вставить на эту страницу в виде слайдера. Пока честнее давать ссылку на ВК, чем показывать подставные сравнения.</p>
+  </div>
+</section>
+
+<!-- CALCULATOR -->
+<section id="calculator">
+  <div class="section-header">
+    <span class="eyebrow" style="margin-left:auto;margin-right:auto">Калькулятор</span>
+    <h2>Рассчитайте <span class="g">примерную стоимость</span></h2>
+    <p>Калькулятор ориентировочный. Точная цена называется после просмотра вашего фото и зависит от сложности и количества лиц.</p>
   </div>
   <div class="calc">
     <div>
       <div class="field">
         <label>1. Услуга</label>
-        <div class="opts" id="svcOpts">
-          <div class="opt active" data-n="Ретушь портрета" data-c="Ретушь" data-p="300">AI-Ретушь · 300 ₽</div>
-          <div class="opt" data-n="Деловое фото" data-c="Деловое" data-p="450">Бизнес · 450 ₽</div>
-          <div class="opt" data-n="Нейро-аватар" data-c="Нейро" data-p="500">Нейро · 500 ₽</div>
-          <div class="opt" data-n="Реставрация" data-c="Реставрация" data-p="600">Реставрация · 600 ₽</div>
+        <div class="opts" id="opts">
+          <div class="opt active" data-p="300" data-n="AI-ретушь портрета" data-c="Ретушь">AI-Ретушь · 300 ₽</div>
+          <div class="opt" data-p="450" data-n="Деловой бизнес-портрет" data-c="Деловое">Бизнес · 450 ₽</div>
+          <div class="opt" data-p="500" data-n="Нейро-аватар" data-c="Нейро">Нейро · 500 ₽</div>
+          <div class="opt" data-p="600" data-n="Реставрация старого фото" data-c="Реставрация">Реставрация · 600 ₽</div>
         </div>
       </div>
       <div class="field">
-        <label>2. Количество: <span id="cntLabel" style="color:var(--cyan-soft)">1 шт</span></label>
+        <label>2. Количество фотографий: <span id="cntLab" style="color:var(--cyan)">1 шт</span></label>
         <input type="range" id="cnt" min="1" max="15" value="1">
       </div>
       <div class="field">
         <label>3. Срочность</label>
         <div class="opts">
-          <div class="opt active" id="optStd" onclick="setExp(false)">Стандарт (сегодня)</div>
-          <div class="opt" id="optExp" onclick="setExp(true)">⚡ Экспресс · +50%</div>
+          <div class="opt active" id="oStd" onclick="setE(false)">Стандарт (в течение дня)</div>
+          <div class="opt" id="oExp" onclick="setE(true)">⚡ Экспресс · +50%</div>
         </div>
       </div>
       <div class="field">
-        <label>4. Пожелания</label>
-        <input type="text" id="comment" class="input" placeholder="Например: светлый фон, убрать блики, фото в костюме...">
+        <label>4. Пожелания (необязательно)</label>
+        <input type="text" id="cmt" class="input" placeholder="Например: светлый фон, убрать блики, без сильной ретуши...">
       </div>
     </div>
-    <div class="calc-result">
+    <div class="calc-res">
       <div>
-        <div style="color:var(--text-2);font-size:.9rem;font-weight:600;text-transform:uppercase;letter-spacing:.5px">Итоговая оценка</div>
+        <div style="color:var(--muted);font-size:.85rem;font-weight:700;text-transform:uppercase;letter-spacing:.5px">Ориентировочная цена</div>
         <div class="price" id="price">300 ₽</div>
-        <p class="hint">* Итоговая цена может отличаться после просмотра исходника — зависит от качества, количества лиц, сложности ретуши.</p>
-
-        <label style="display:block;font-weight:700;margin:20px 0 8px;font-size:.9rem">Сообщение для мастера:</label>
-        <textarea class="order-msg" id="msg" readonly></textarea>
+        <p class="hint">* Итоговая цена может отличаться после просмотра исходника. При 5+ фото — скидка 15%.</p>
+        <label style="display:block;font-weight:700;margin:18px 0 8px;font-size:.9rem">Готовый текст для мастера:</label>
+        <textarea class="msg" id="msg" readonly></textarea>
       </div>
-      <div class="actions-row">
-        <a id="vkLink" href="https://vk.com/im?sel=-239853638" target="_blank" class="btn-primary" style="flex:1">В ВК ✈</a>
-        <button class="btn-secondary" onclick="copyMsg()">Копировать</button>
+      <div class="ar">
+        <a id="vkL" href="https://vk.com/im?sel=-239853638" target="_blank" class="btn-primary" style="flex:1;justify-content:center">Отправить в ВК ✈</a>
+        <button class="btn-secondary" onclick="cpMsg()">Копировать</button>
       </div>
     </div>
   </div>
 </section>
 
 <!-- PORTFOLIO -->
-<section id="portfolio" class="reveal">
+<section id="portfolio">
   <div class="section-header">
-    <span class="eyebrow">Портфолио</span>
-    <h2>Последние <span class="gradient-text">работы</span></h2>
-    <p>Свежие заказы из нашей группы ВК. При клике на карточку — крупный просмотр. Больше работ — в сообществе ВКонтакте.</p>
-    <div style="margin-top:24px"><a href="https://vk.com/retouch_ai_online" target="_blank" class="btn-primary">💙 Все работы в группе ВК ↗</a></div>
+    <span class="eyebrow" style="margin-left:auto;margin-right:auto">Каталог</span>
+    <h2>Примеры <span class="g">готовых работ</span></h2>
+    <p>Фрагменты готовых заказов. Больше работ, новые публикации и сравнения «до/после» — в нашей группе ВКонтакте. Клик на карточку ведёт на сообщество.</p>
+    <div style="margin-top:22px"><a href="https://vk.com/retouch_ai_online" target="_blank" rel="noopener" class="btn-primary">💙 Все работы в группе ВК ↗</a></div>
   </div>
+  <div class="portfolio">
+    <div class="work">
+      <div class="work-img"><img src="assets/images/photo-ai-be9879b574518155.jpg" alt="Бизнес-портрет" loading="lazy"></div>
+      <div class="work-body">
+        <span class="work-tag">#БизнесПортрет</span>
+        <h4>Бизнес-портрет</h4>
+        <p class="work-desc">Аккуратный деловой вариант с нейтральным фоном и ровным светом.</p>
+        <div class="work-meta"><span>Готовая работа</span><a href="https://vk.com/retouch_ai_online" target="_blank" rel="noopener">Посмотреть в ВК ↗</a></div>
+      </div>
+    </div>
+<div class="work">
+      <div class="work-img"><img src="assets/images/photo-ai-0874074013937556.jpg" alt="AI-ретушь портрета" loading="lazy"></div>
+      <div class="work-body">
+        <span class="work-tag">#AIРетушь</span>
+        <h4>AI-ретушь портрета</h4>
+        <p class="work-desc">Выравнивание тона кожи и мягкая цветокоррекция без эффекта «маски».</p>
+        <div class="work-meta"><span>Готовая работа</span><a href="https://vk.com/retouch_ai_online" target="_blank" rel="noopener">Посмотреть в ВК ↗</a></div>
+      </div>
+    </div>
+<div class="work">
+      <div class="work-img"><img src="assets/images/photo-ai-c3d5f2ac584bf859.jpg" alt="AI-ретушь портрета" loading="lazy"></div>
+      <div class="work-body">
+        <span class="work-tag">#AIРетушь</span>
+        <h4>AI-ретушь портрета</h4>
+        <p class="work-desc">Классическая ретушь под соцсети и аватарку профиля.</p>
+        <div class="work-meta"><span>Готовая работа</span><a href="https://vk.com/retouch_ai_online" target="_blank" rel="noopener">Посмотреть в ВК ↗</a></div>
+      </div>
+    </div>
+<div class="work">
+      <div class="work-img"><img src="assets/images/photo-ai-a45a5604945759ff.jpg" alt="Деловое фото" loading="lazy"></div>
+      <div class="work-body">
+        <span class="work-tag">#БизнесПортрет</span>
+        <h4>Деловое фото</h4>
+        <p class="work-desc">Портрет в сдержанной тональности для резюме и сайта.</p>
+        <div class="work-meta"><span>Готовая работа</span><a href="https://vk.com/retouch_ai_online" target="_blank" rel="noopener">Посмотреть в ВК ↗</a></div>
+      </div>
+    </div>
+<div class="work">
+      <div class="work-img"><img src="assets/images/photo-ai-e659c041a888d653.jpg" alt="Нейро-аватар" loading="lazy"></div>
+      <div class="work-body">
+        <span class="work-tag">#НейроОбраз</span>
+        <h4>Нейро-аватар</h4>
+        <p class="work-desc">Стилизация фотографии в выразительный образ с сохранением черт лица.</p>
+        <div class="work-meta"><span>Готовая работа</span><a href="https://vk.com/retouch_ai_online" target="_blank" rel="noopener">Посмотреть в ВК ↗</a></div>
+      </div>
+    </div>
+<div class="work">
+      <div class="work-img"><img src="assets/images/photo-ai-efd7831d1b503f71.jpg" alt="Нейро-образ" loading="lazy"></div>
+      <div class="work-body">
+        <span class="work-tag">#НейроОбраз</span>
+        <h4>Нейро-образ</h4>
+        <p class="work-desc">Творческая AI-стилизация под заданную эстетику.</p>
+        <div class="work-meta"><span>Готовая работа</span><a href="https://vk.com/retouch_ai_online" target="_blank" rel="noopener">Посмотреть в ВК ↗</a></div>
+      </div>
+    </div>
+<div class="work">
+      <div class="work-img"><img src="assets/images/photo-ai-f26512a0ea1244f9.jpg" alt="Нейро-аватар" loading="lazy"></div>
+      <div class="work-body">
+        <span class="work-tag">#НейроОбраз</span>
+        <h4>Нейро-аватар</h4>
+        <p class="work-desc">Пример AI-аватара для социальных сетей.</p>
+        <div class="work-meta"><span>Готовая работа</span><a href="https://vk.com/retouch_ai_online" target="_blank" rel="noopener">Посмотреть в ВК ↗</a></div>
+      </div>
+    </div>
+<div class="work">
+      <div class="work-img"><img src="assets/images/photo-ai-93310d10fe9d1ced.jpg" alt="Естественная ретушь" loading="lazy"></div>
+      <div class="work-body">
+        <span class="work-tag">#AIРетушь</span>
+        <h4>Естественная ретушь</h4>
+        <p class="work-desc">Мягкая обработка с сохранением естественной фактуры кожи.</p>
+        <div class="work-meta"><span>Готовая работа</span><a href="https://vk.com/retouch_ai_online" target="_blank" rel="noopener">Посмотреть в ВК ↗</a></div>
+      </div>
+    </div>
+<div class="work">
+      <div class="work-img"><img src="assets/images/photo-ai-92a776a2e83c7c50.jpg" alt="Портретная ретушь" loading="lazy"></div>
+      <div class="work-body">
+        <span class="work-tag">#AIРетушь</span>
+        <h4>Портретная ретушь</h4>
+        <p class="work-desc">Базовая обработка и цветокоррекция.</p>
+        <div class="work-meta"><span>Готовая работа</span><a href="https://vk.com/retouch_ai_online" target="_blank" rel="noopener">Посмотреть в ВК ↗</a></div>
+      </div>
+    </div>
+<div class="work">
+      <div class="work-img"><img src="assets/images/photo-ai-35e255e652524f6f.jpg" alt="Реставрация фото" loading="lazy"></div>
+      <div class="work-body">
+        <span class="work-tag">#Реставрация</span>
+        <h4>Реставрация фото</h4>
+        <p class="work-desc">Удаление дефектов и повышение резкости старого снимка.</p>
+        <div class="work-meta"><span>Готовая работа</span><a href="https://vk.com/retouch_ai_online" target="_blank" rel="noopener">Посмотреть в ВК ↗</a></div>
+      </div>
+    </div>
+<div class="work">
+      <div class="work-img"><img src="assets/images/photo-ai-db08cb332f18e1f2.jpg" alt="Реставрация архива" loading="lazy"></div>
+      <div class="work-body">
+        <span class="work-tag">#Реставрация</span>
+        <h4>Реставрация архива</h4>
+        <p class="work-desc">Восстановление старой фотографии: трещины, выцветание, пятна.</p>
+        <div class="work-meta"><span>Готовая работа</span><a href="https://vk.com/retouch_ai_online" target="_blank" rel="noopener">Посмотреть в ВК ↗</a></div>
+      </div>
+    </div>
+<div class="work">
+      <div class="work-img"><img src="assets/images/photo-ai-33cd6c9c97a87881.jpg" alt="Восстановление фото" loading="lazy"></div>
+      <div class="work-body">
+        <span class="work-tag">#Реставрация</span>
+        <h4>Восстановление фото</h4>
+        <p class="work-desc">Бережная работа с архивным снимком.</p>
+        <div class="work-meta"><span>Готовая работа</span><a href="https://vk.com/retouch_ai_online" target="_blank" rel="noopener">Посмотреть в ВК ↗</a></div>
+      </div>
+    </div>
 
-  <div class="pills" id="catPills">
-    <button class="pill active" data-c="all">Все</button>
-    <button class="pill" data-c="retouch">AI-Ретушь</button>
-    <button class="pill" data-c="business">Деловое</button>
-    <button class="pill" data-c="neuro">Нейро-образы</button>
-    <button class="pill" data-c="restoration">Реставрация</button>
   </div>
+</section>
 
-  <div class="portfolio" id="grid"></div>
-  <div class="load-more" id="lmw" style="display:none"><button class="btn-secondary" id="lm">Показать ещё</button></div>
+<!-- HOW IT WORKS -->
+<section id="process">
+  <div class="section-header">
+    <span class="eyebrow" style="margin-left:auto;margin-right:auto">Процесс</span>
+    <h2>Как сделать <span class="g">заказ</span></h2>
+    <p>Всё общение — только в сообщениях официальной группы ВК. Никаких ботов, регистраций и сторонних сервисов.</p>
+  </div>
+  <div class="grid c4">
+    <div class="card"><div class="step">1</div><h3>Отправьте фото</h3><p>В сообщения группы — желательно файлом/документом без сжатия. Укажите кодовое слово услуги.</p></div>
+    <div class="card"><div class="step">2</div><h3>Оценим</h3><p>Посмотрим качество исходника, сложность, количество лиц. Назовём точную цену и срок до начала работы.</p></div>
+    <div class="card"><div class="step">3</div><h3>Согласуем</h3><p>Обсудим детали: минимальная ретушь, деловой стиль, реставрация или креативная AI-стилизация.</p></div>
+    <div class="card"><div class="step">4</div><h3>Получите результат</h3><p>Готовое фото в нужном размере. Бесплатные правки, пока результат не устроит.</p></div>
+  </div>
 </section>
 
 <!-- GUARANTEES -->
-<section id="guarantees" class="reveal">
+<section id="guarantees">
   <div class="section-header">
-    <span class="eyebrow">Гарантии</span>
-    <h2>Работаем <span class="gradient-text">прозрачно</span></h2>
-    <p>Вы всегда видите результат и можете поправить детали, пока не будете довольны полностью.</p>
+    <span class="eyebrow" style="margin-left:auto;margin-right:auto">Гарантии</span>
+    <h2>На каких <span class="g">условиях работаем</span></h2>
   </div>
   <div class="grid c3">
-    <div class="card"><div class="icon-lg">🔁</div><h3>Бесплатные правки</h3><p>Правим детали, пока вы не скажете «всё отлично». Обычно уходит 1–2 итерации.</p></div>
-    <div class="card"><div class="icon-lg">⏱</div><h3>Сроки от 15 мин</h3><p>Стандарт — от 1 до 3 часов. Экспресс +50% — готово в течение получаса.</p></div>
-    <div class="card"><div class="icon-lg">💳</div><h3>Оплата после</h3><p>Сначала вариант с лёгким вотермарком, потом оплата. Никаких предоплат «в никуда».</p></div>
-    <div class="card"><div class="icon-lg">🔒</div><h3>Конфиденциальность</h3><p>Фото не публикуются без вашего разрешения. Исходники удаляются по запросу.</p></div>
-    <div class="card"><div class="icon-lg">💸</div><h3>Возврат денег</h3><p>Если не получилось сделать в обещанном качестве — полный возврат средств.</p></div>
-    <div class="card"><div class="icon-lg">📱</div><h3>Любой формат</h3><p>Квадрат для соцсетей, 3×4 на паспорт, высокое разрешение для печати.</p></div>
+    <div class="card"><div class="icon-lg">🔁</div><h3>Бесплатные правки</h3><p>Если что-то не понравилось — правим детали до полного согласования.</p></div>
+    <div class="card"><div class="icon-lg">⏱</div><h3>Сроки от 15 мин</h3><p>Стандарт — от 15 минут до 3 часов. Экспресс +50% — до 30 минут.</p></div>
+    <div class="card"><div class="icon-lg">💳</div><h3>Оплата после результата</h3><p>Сначала вариант с лёгким вотермарком, после утверждения — оплата и готовая версия без вотермарка.</p></div>
+    <div class="card"><div class="icon-lg">🔒</div><h3>Конфиденциальность</h3><p>Не публикуем фото без вашего разрешения. По запросу удаляем исходники после заказа.</p></div>
+    <div class="card"><div class="icon-lg">💬</div><h3>Только через ВК</h3><p>Вся связь — через официальную группу vk.com/retouch_ai_online. Никаких сторонних менеджеров.</p></div>
+    <div class="card"><div class="icon-lg">📐</div><h3>Любой формат</h3><p>Квадрат для соцсетей, размер на паспорт/визу, высокое разрешение для печати.</p></div>
   </div>
 </section>
 
-<!-- PROCESS -->
-<section id="process" class="reveal">
+<!-- REVIEWS HONEST PLUG -->
+<section id="reviews">
   <div class="section-header">
-    <span class="eyebrow">Процесс</span>
-    <h2>Как сделать <span class="gradient-text">заказ</span></h2>
-    <p>Весь процесс — в сообщениях сообщества ВК, без регистрации и установки приложений.</p>
+    <span class="eyebrow" style="margin-left:auto;margin-right:auto">Отзывы</span>
+    <h2>Что пишут <span class="g">клиенты</span></h2>
+    <p>Отзывы клиентов, обсуждения и актуальные заказы находятся в открытом доступе в нашей группе ВК.</p>
   </div>
-  <div class="grid c4">
-    <div class="card"><div class="step-badge">1</div><h3>Отправляете фото</h3><p>Лучше файлом/документом без сжатия. Укажите кодовое слово услуги.</p></div>
-    <div class="card"><div class="step-badge">2</div><h3>Оцениваем исходник</h3><p>Проверяем качество, сложность, количество лиц и ваши пожелания.</p></div>
-    <div class="card"><div class="step-badge">3</div><h3>Согласуем стиль</h3><p>Минимум ретуши, деловой образ, нейро-стиль или реставрация — на ваш выбор.</p></div>
-    <div class="card"><div class="step-badge">4</div><h3>Отправляем результат</h3><p>Готовое фото в удобном формате. Небольшие правки — в диалоге.</p></div>
+  <div class="vkplug">
+    <div class="vklogo"><svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M15.07 2H8.93C3.33 2 2 3.33 2 8.93v6.14C2 20.67 3.33 22 8.93 22h6.14c5.6 0 6.93-1.33 6.93-6.93V8.93C22 3.33 20.67 2 15.07 2zm3.39 13.62h-1.44c-.58 0-.76-.46-1.81-1.51-.91-.88-1.3-.99-1.52-.99-.31 0-.41.09-.41.53v1.38c0 .38-.12.59-1.12.59-1.65 0-3.48-1-4.78-2.88-1.96-2.76-2.5-4.83-2.5-5.26 0-.24.09-.46.54-.46h1.44c.41 0 .57.19.73.63.8 2.31 2.14 4.34 2.69 4.34.21 0 .31-.1.31-.64V9.82c-.06-1.12-.65-1.22-.65-1.62 0-.19.16-.38.42-.38h2.27c.31 0 .42.16.42.52v2.85c0 .31.14.42.23.42.21 0 .38-.11.76-.49 1.18-1.32 2.01-3.34 2.01-3.34.11-.24.4-.48.95-.48h1.44c.43 0 .52.22.42.52-.18.84-1.96 3.36-2.14 3.63-.16.23-.23.34 0 .64.16.21.68.67 1.03 1.08.64.75 1.13 1.38 1.26 1.82.14.43-.08.66-.51.66z"/></svg></div>
+    <h3>Отзывы — в сообществе ВК</h3>
+    <p>Чтобы не придумывать тексты от имён вымышленных людей, отзывы публикуются в открытом доступе прямо в группе ВК, где у каждой записи есть автор и дата. Можете почитать в любое время.</p>
+    <a href="https://vk.com/retouch_ai_online" target="_blank" rel="noopener" class="btn-primary">Читать отзывы в ВК ↗</a>
   </div>
 </section>
 
-<!-- REVIEWS -->
-<section id="reviews" class="reveal">
-  <div class="section-header">
-    <span class="eyebrow">Отзывы</span>
-    <h2>Что говорят <span class="gradient-text">клиенты</span></h2>
-    <p>Свежие отзывы из группы ВК. Все переписки можно проверить в официальном сообществе.</p>
-  </div>
-  <div class="grid c3">
-    <div class="review"><div class="review-head"><div class="ava">А</div><div><div class="review-name">Анна К.</div><div class="review-svc">Бизнес-портрет</div></div></div><div class="stars">★★★★★</div><p class="review-text">«Сделали деловой портрет для HH из домашнего фото за 20 минут! Очень аккуратно, без «пластика», как я боялась. Спасибо!»</p></div>
-    <div class="review"><div class="review-head"><div class="ava">Д</div><div><div class="review-name">Дмитрий С.</div><div class="review-svc">Реставрация</div></div></div><div class="stars">★★★★★</div><p class="review-text">«Восстановили бабушкино фото 1957 года — мама плакала, когда увидела. Трещины убрали, цвета подобрали, детали лиц вернули!»</p></div>
-    <div class="review"><div class="review-head"><div class="ava">Е</div><div><div class="review-name">Елена М.</div><div class="review-svc">Нейро-аватар</div></div></div><div class="stars">★★★★★</div><p class="review-text">«Заказывала аватар в подарок мужу в образе пилота — попали в точку, все пожелания учли, несколько раз бесплатно доработали детали.»</p></div>
-    <div class="review"><div class="review-head"><div class="ava">С</div><div><div class="review-name">Сергей В.</div><div class="review-svc">Пакет на команду</div></div></div><div class="stars">★★★★★</div><p class="review-text">«Нужно было 6 портретов для сайта — единый свет, единый фон, сделали за день. Цены адекватные, общение приятное.»</p></div>
-    <div class="review"><div class="review-head"><div class="ava">М</div><div><div class="review-name">Мария П.</div><div class="review-svc">Свадебные фото</div></div></div><div class="stars">★★★★★</div><p class="review-text">«Отдала 12 свадебных снимков — аккуратная работа с кожей, без переборов. Корректировки попросила — сделали в тот же день бесплатно.»</p></div>
-    <div class="review"><div class="review-head"><div class="ava">И</div><div><div class="review-name">Игорь Т.</div><div class="review-svc">Экспресс</div></div></div><div class="stars">★★★★★</div><p class="review-text">«Срочно нужен был портрет на баннер конференции — отправил селфи, получил вариант за 12 минут. Качественно, не стыдно поставить на баннер.»</p></div>
-  </div>
-  <div style="text-align:center;margin-top:30px"><a href="https://vk.com/retouch_ai_online" target="_blank" class="btn-secondary">Читать все отзывы в ВК ↗</a></div>
-</section>
-
-<!-- CTA FINAL -->
-<div class="cta-block reveal">
-  <h2>Хотите улучшить фото <span class="gradient-text">уже сегодня</span>?</h2>
-  <p>Отправьте снимок в сообщения группы ВК — посмотрим исходник, подскажем лучший вариант и назовём точную стоимость до начала работы.</p>
+<!-- FINAL CTA -->
+<div class="final">
+  <h2>Готовы <span class="g">отправить фото?</span></h2>
+  <p>Пришлите снимок в сообщения группы ВК — посмотрим исходник, назовём точную цену и приступим к работе.</p>
   <a href="https://vk.com/im?sel=-239853638" target="_blank" class="btn-primary">💙 Написать мастеру в ВК</a>
 </div>
 
-<!-- FAQ -->
-<section id="faq" class="reveal">
-  <div class="section-header">
-    <span class="eyebrow">FAQ</span>
-    <h2>Частые <span class="gradient-text">вопросы</span></h2>
-  </div>
-  <div class="faq">
-    <details class="faq-item"><summary>Как сделать заказ и куда отправлять фото?</summary><div class="answer">Нажмите любую кнопку «Написать в ВК» или используйте калькулятор — он сформирует готовое сообщение. Отправьте фото файлом/документом в ВК и укажите кодовое слово услуги.</div></details>
-    <details class="faq-item"><summary>Сохранится ли узнаваемость лица?</summary><div class="answer">Да. Наша фишка — естественный результат. Не меняем черты без запроса, не делаем «пластиковую» кожу. Если нужна минимальная ретушь — напишите об этом.</div></details>
-    <details class="faq-item"><summary>Публикуете ли фото в портфолио?</summary><div class="answer">Только с разрешения клиента. Если хотите конфиденциально — напишите «не публиковать» при заказе.</div></details>
-    <details class="faq-item"><summary>Сколько времени занимает обработка?</summary><div class="answer">Стандарт — от 15 мин до 3 часов в зависимости от сложности и загрузки. Экспресс +50% — до 30 минут в любое время дня.</div></details>
-    <details class="faq-item"><summary>Как происходит оплата?</summary><div class="answer">Оценка и согласование стоимости — до начала работы. Сначала отправляем вариант с лёгким вотермарком, после утверждения вы оплачиваете и получаете чистую версию.</div></details>
-    <details class="faq-item"><summary>В каком качестве отправлять фото?</summary><div class="answer">Оригинал без сжатия — как документ/файл в ВК (с иконкой 📄). Чем выше качество, тем чище результат. Сжатые фото тоже принимаем.</div></details>
-    <details class="faq-item"><summary>Можете восстановить размытое старое фото?</summary><div class="answer">Да. Нейросеть возвращает резкость и убирает шум. Если исходник очень плохого качества — честно предупредим о пределах возможного до оплаты.</div></details>
-    <details class="faq-item"><summary>Делаете фото на паспорт / визу?</summary><div class="answer">Да, по требованиям МФЦ и посольств — правильные пропорции, фон, форма под 3×4, 3,5×4,5 и другие размеры.</div></details>
-    <details class="faq-item"><summary>Работаете с юридическими лицами?</summary><div class="answer">Да, делаем корпоративные пакеты от 10 фото с отдельными скидками. Предоставляем чек и закрывающие документы.</div></details>
-    <details class="faq-item"><summary>Почему не самому в приложении?</summary><div class="answer">Приложения часто переретушивают кожу и выдают шаблонные результаты. У нас финальный результат проверяет и дорабатывает мастер вручную — 100% узнаваемость и естественность.</div></details>
-  </div>
-</section>
-
 <footer>
   <div class="footer-logo">✦ PHOTO AI STUDIO</div>
-  <p class="footer-sub">Официальный сайт сообщества ВКонтакте (club239853638). Все заказы и связь с мастером — только через сообщения официальной группы.</p>
+  <p class="footer-sub">Заказы принимаются только через официальное сообщество ВКонтакте <b>vk.com/retouch_ai_online</b> (club239853638). Пишите от своего аккаунта в личные сообщения сообщества.</p>
   <div class="footer-links">
-    <a href="https://vk.com/retouch_ai_online" target="_blank">Группа ВК ↗</a>
     <a href="#services">Услуги</a>
-    <a href="#portfolio">Портфолио</a>
     <a href="#calculator">Калькулятор</a>
+    <a href="#portfolio">Работы</a>
     <a href="#guarantees">Гарантии</a>
-    <a href="#reviews">Отзывы</a>
-    <a href="#faq">FAQ</a>
+    <a href="https://vk.com/retouch_ai_online" target="_blank" rel="noopener">Группа ВК ↗</a>
   </div>
-  <p class="footer-meta">© Photo AI Studio · Обновлено: <span id="today"></span></p>
+  <p class="fm">© Photo AI Studio · <span id="today"></span></p>
 </footer>
 
-<!-- Floating VK button -->
-<a href="https://vk.com/im?sel=-239853638" target="_blank" class="floating-vk" aria-label="Написать в ВК">
+<a href="https://vk.com/im?sel=-239853638" target="_blank" rel="noopener" class="fvk" aria-label="Написать в ВК">
   <svg viewBox="0 0 24 24"><path d="M15.07 2H8.93C3.33 2 2 3.33 2 8.93v6.14C2 20.67 3.33 22 8.93 22h6.14c5.6 0 6.93-1.33 6.93-6.93V8.93C22 3.33 20.67 2 15.07 2zm3.39 13.62h-1.44c-.58 0-.76-.46-1.81-1.51-.91-.88-1.3-.99-1.52-.99-.31 0-.41.09-.41.53v1.38c0 .38-.12.59-1.12.59-1.65 0-3.48-1-4.78-2.88-1.96-2.76-2.5-4.83-2.5-5.26 0-.24.09-.46.54-.46h1.44c.41 0 .57.19.73.63.8 2.31 2.14 4.34 2.69 4.34.21 0 .31-.1.31-.64V9.82c-.06-1.12-.65-1.22-.65-1.62 0-.19.16-.38.42-.38h2.27c.31 0 .42.16.42.52v2.85c0 .31.14.42.23.42.21 0 .38-.11.76-.49 1.18-1.32 2.01-3.34 2.01-3.34.11-.24.4-.48.95-.48h1.44c.43 0 .52.22.42.52-.18.84-1.96 3.36-2.14 3.63-.16.23-.23.34 0 .64.16.21.68.67 1.03 1.08.64.75 1.13 1.38 1.26 1.82.14.43-.08.66-.51.66z"/></svg>
 </a>
-<div class="floating-hint">Отправить фото мастеру</div>
-
-<!-- Modal -->
-<div class="modal" id="modal">
-  <div class="modal-body">
-    <button class="modal-close" onclick="document.getElementById('modal').removeAttribute('open')">&times;</button>
-    <img id="mImg" src="" alt="">
-    <h3 id="mTitle"></h3>
-    <p id="mDesc" style="color:var(--text-2);line-height:1.6"></p>
-  </div>
-</div>
 
 <script>
-// ===== PORTFOLIO DATA (реальные сценарии) =====
-const ALL_POSTS = [
-            {"id":"p1","title":"Ретушь портрета для профиля HH.ru","date":"8 июля 2026","cat":"business","tag":"#БизнесПортрет","desc":"Из домашнего снимка в аккуратный деловой портрет: выровняли свет, заменили фон на нейтральный, сохранили естественность лица. Результат за 25 минут.","img":"assets/images/photo-ai-be9879b574518155.jpg"},
-            {"id":"p2","title":"Естественная ретушь для Tinder","date":"7 июля 2026","cat":"retouch","tag":"#AIРетушь","desc":"Мягкая обработка под dating-профиль: убраны мешки под глазами, выровнен тон, подчёркнуты глаза. Эффект «хорошо выспался», а не «был в фотошопе».","img":"assets/images/photo-ai-93310d10fe9d1ced.jpg"},
-            {"id":"p3","title":"Нейро-аватар в стиле luxury","date":"5 июля 2026","cat":"neuro","tag":"#НейроОбраз","desc":"Стилизация в премиальный образ для личного бренда: дорогой костюм, студийный свет, кинематографическая цветокоррекция. Узнаваемость сохранена.","img":"assets/images/photo-ai-e659c041a888d653.jpg"},
-            {"id":"p4","title":"Реставрация семейной фотографии 1978 г.","date":"3 июля 2026","cat":"restoration","tag":"#Реставрация","desc":"Снимок был пожелтевшим, с глубокой трещиной и утраченными фрагментами лица. Восстановили детали, убрали дефекты, сделали мягкую колоризацию.","img":"assets/images/photo-ai-35e255e652524f6f.jpg"},
-            {"id":"p5","title":"Портрет на паспорт — AI-версия","date":"1 июля 2026","cat":"business","tag":"#БизнесПортрет","desc":"Замена одежды на строгую рубашку, ровное освещение, нейтральный фон. Подходит для резюме, пропуска, корпоративного портала.","img":"assets/images/photo-ai-a45a5604945759ff.jpg"},
-            {"id":"p6","title":"Свадебный портрет — доработка","date":"29 июня 2026","cat":"retouch","tag":"#AIРетушь","desc":"Парный портрет: устранение бликов на коже, коррекция цвета платья, мягкое боке на фоне. Без «пластиковой» кожи.","img":"assets/images/photo-ai-92a776a2e83c7c50.jpg"},
-            {"id":"p7","title":"Нейро-образ в стиле cyberpunk","date":"26 июня 2026","cat":"neuro","tag":"#НейроОбраз","desc":"Фантазийный образ для аватара и соцсетей: неоновая подсветка, футуристический фон, сохранение черт лица.","img":"assets/images/photo-ai-efd7831d1b503f71.jpg"},
-            {"id":"p8","title":"Восстановление группового снимка 90-х","date":"22 июня 2026","cat":"restoration","tag":"#Реставрация","desc":"Групповое фото выпускников: множественные царапины, сгибы, потеря контраста. Провели восстановление резкости лиц и цветов.","img":"assets/images/photo-ai-db08cb332f18e1f2.jpg"},
-            {"id":"p9","title":"Ретушь для Instagram-селфи","date":"18 июня 2026","cat":"retouch","tag":"#AIРетушь","desc":"Быстрая обработка селфи с телефона: чистое лицо, яркий живой взгляд, сочные цвета. Готово за 15 минут.","img":"assets/images/photo-ai-c3d5f2ac584bf859.jpg"},
-            {"id":"p10","title":"Бизнес-портрет эксперта","date":"15 июня 2026","cat":"business","tag":"#БизнесПортрет","desc":"Портрет для блога и выступлений: уверенная поза, профессиональный свет, сдержанный фон. Клиент использовал фото для обложки ВК.","img":"assets/images/photo-ai-0874074013937556.jpg"},
-            {"id":"p11","title":"Нейро-портрет в стиле фэнтези","date":"12 июня 2026","cat":"neuro","tag":"#НейроОбраз","desc":"Подарочный образ: эльфийский стиль, детализированные доспехи, волшебное освещение. Подарок ко дню рождения.","img":"assets/images/photo-ai-f26512a0ea1244f9.jpg"},
-            {"id":"p12","title":"Восстановление фото бабушки и дедушки","date":"9 июня 2026","cat":"restoration","tag":"#Реставрация","desc":"Фото 1960-х годов с сильной потерей контраста. Вернули четкость лиц, убрали пятна от времени, выполнили мягкую тонировку.","img":"assets/images/photo-ai-33cd6c9c97a87881.jpg"},
-            {"id":"p13","title":"Нейро-аватар в стиле аниме","date":"6 июня 2026","cat":"neuro","tag":"#НейроОбраз","desc":"Стилизованный аватар в стиле современного аниме по фотографии. Яркие цвета, детализированные глаза, сохранение общих черт лица. Готово в подарочном варианте.","img":"assets/images/photo-ai-e659c041a888d653.jpg"},
-            {"id":"p14","title":"Лёгкая ретушь для Bumble и Badoo","date":"4 июня 2026","cat":"retouch","tag":"#AIРетушь","desc":"Пять профильных фото для dating-приложений: естественная ретушь, коррекция света, лёгкий загар, никаких переборов. Клиент отметил резкий рост ответов после обновления.","img":"assets/images/photo-ai-93310d10fe9d1ced.jpg"},
-            {"id":"p15","title":"Корпоративное фото для 8 сотрудников","date":"2 июня 2026","cat":"business","tag":"#БизнесПортрет","desc":"Пакет бизнес-портретов для раздела «Команда» на сайте IT-компании. Единый фон, единая цветовая схема, строгая одежда. Сделано за день.","img":"assets/images/photo-ai-be9879b574518155.jpg"},
-            {"id":"p16","title":"Черно-белый портрет в студийном стиле","date":"30 мая 2026","cat":"retouch","tag":"#AIРетушь","desc":"Перевели цветное селфи в кинематографичный ч/б вариант с глубокими тенями и красивым светом. Подпись для аватара ВК и ТГ.","img":"assets/images/photo-ai-92a776a2e83c7c50.jpg"}
-        ];
-
-// ===== ANALYTICS =====
-function sendGoal(g){try{if(typeof ym==='function'&&window.YANDEX_METRIKA_ID)ym(window.YANDEX_METRIKA_ID,'reachGoal',g)}catch(e){}}
-document.addEventListener('click',e=>{const a=e.target.closest('a,button');if(!a)return;const h=a.getAttribute('href')||'';if(h.includes('vk.com/im'))sendGoal('vk_message_click');if(h==='#calculator')sendGoal('calculator_click')});
-
-// ===== SCROLL NAV EFFECT & REVEAL =====
-window.addEventListener('scroll',()=>{
-  document.getElementById('nav').classList.toggle('scrolled',window.scrollY>20);
-  document.querySelectorAll('.reveal').forEach(el=>{
-    if(el.getBoundingClientRect().top<window.innerHeight-100)el.classList.add('in');
-  });
-},{passive:true});
-window.dispatchEvent(new Event('scroll'));
-
-// ===== LIVE CHIP =====
-function updateLive(){
-  const chip=document.getElementById('liveChip'),t=document.getElementById('liveText');
-  if(!chip||!t)return;
-  const h=new Date().getHours();
-  chip.classList.remove('warm','offline');
-  if(h>=9&&h<22)t.textContent='Мастер онлайн · отвечаю в ВК за пару минут';
-  else if(h>=7&&h<9){chip.classList.add('warm');t.textContent='Скоро буду онлайн · заявки 24/7'}
-  else{chip.classList.add('offline');t.textContent='Нерабочее время · отвечу утром'}
-}
-setInterval(updateLive,60000);
-
-// ===== COMPARISON SLIDER =====
-const SLIDERS=[
-  {a:"assets/images/photo-ai-e659c041a888d653.jpg",b:"assets/images/photo-ai-be9879b574518155.jpg",d:"Естественная ретушь: выравнивание тона кожи, мягкая цветокоррекция, без эффекта «маски»."},
-  {a:"assets/images/photo-ai-a45a5604945759ff.jpg",b:"assets/images/photo-ai-93310d10fe9d1ced.jpg",d:"Деловой портрет из домашнего снимка: строгий дресс-код, студийный свет, нейтральный фон."},
-  {a:"assets/images/photo-ai-efd7831d1b503f71.jpg",b:"assets/images/photo-ai-35e255e652524f6f.jpg",d:"Реставрация архива: удаление трещин и пятен, восстановление резкости лиц, мягкая колоризация."},
-  {a:"assets/images/photo-ai-92a776a2e83c7c50.jpg",b:"assets/images/photo-ai-be9879b574518155.jpg",d:"Нейро-аватар: стилизация в выразительный образ с сохранением узнаваемости."}
+/* Calculator */
+const services=[
+  {p:300,n:"AI-ретушь портрета",c:"Ретушь"},
+  {p:450,n:"Деловой бизнес-портрет",c:"Деловое"},
+  {p:500,n:"Нейро-аватар",c:"Нейро"},
+  {p:600,n:"Реставрация старого фото",c:"Реставрация"}
 ];
-const comp=document.getElementById('comp'),bImg=document.getElementById('compBefore'),hnd=document.getElementById('compHandle');
-let drag=false;
-function moveComp(x){const r=comp.getBoundingClientRect();const p=Math.max(0,Math.min(x-r.left,r.width))/r.width*100;bImg.style.clipPath=`polygon(0 0,${p}% 0,${p}% 100%,0 100%)`;hnd.style.left=p+'%'}
-comp.addEventListener('mousedown',()=>drag=true);
-window.addEventListener('mouseup',()=>drag=false);
-comp.addEventListener('mousemove',e=>{if(drag)moveComp(e.clientX)});
-comp.addEventListener('touchstart',()=>drag=true,{passive:true});
-window.addEventListener('touchend',()=>drag=false);
-comp.addEventListener('touchmove',e=>{if(drag)moveComp(e.touches[0].clientX)},{passive:true});
-document.querySelectorAll('#sliderTabs .pill').forEach(btn=>btn.addEventListener('click',()=>{
-  document.querySelectorAll('#sliderTabs .pill').forEach(p=>p.classList.remove('active'));
-  btn.classList.add('active');
-  const s=SLIDERS[+btn.dataset.i];
-  document.getElementById('compAfter').src=s.a;bImg.src=s.b;document.getElementById('compDesc').textContent=s.d;
-  moveComp(comp.getBoundingClientRect().left+comp.getBoundingClientRect().width/2);
+let cur=services[0],exp=false;
+document.querySelectorAll('#opts .opt').forEach(o=>o.addEventListener('click',()=>{
+  document.querySelectorAll('#opts .opt').forEach(x=>x.classList.remove('active'));
+  o.classList.add('active');
+  cur=services[Array.from(document.querySelectorAll('#opts .opt')).indexOf(o)];
+  calc();
 }));
-
-// ===== CALCULATOR =====
-let cur={n:'Ретушь портрета',c:'Ретушь',p:300},exp=false;
-document.querySelectorAll('#svcOpts .opt').forEach(o=>o.addEventListener('click',()=>{
-  document.querySelectorAll('#svcOpts .opt').forEach(x=>x.classList.remove('active'));
-  o.classList.add('active');cur={n:o.dataset.n,c:o.dataset.c,p:+o.dataset.p};calc();
-}));
-function setExp(v){exp=v;document.getElementById('optStd').classList.toggle('active',!v);document.getElementById('optExp').classList.toggle('active',v);calc()}
-function pickService(n,c,p){cur={n,c,p};calc();window.location.hash='#calculator'}
+function pick(i){cur=services[i];document.querySelectorAll('#opts .opt').forEach((x,j)=>x.classList.toggle('active',j===i));calc();setTimeout(()=>document.getElementById('cnt').focus(),400)}
+function setE(v){exp=v;document.getElementById('oStd').classList.toggle('active',!v);document.getElementById('oExp').classList.toggle('active',v);calc()}
 const cnt=document.getElementById('cnt');
-cnt.addEventListener('input',()=>{document.getElementById('cntLabel').textContent=cnt.value+' шт';calc()});
-document.getElementById('comment').addEventListener('input',calc);
+cnt.addEventListener('input',()=>{document.getElementById('cntLab').textContent=cnt.value+' шт';calc()});
+document.getElementById('cmt').addEventListener('input',calc);
 function calc(){
   const n=+cnt.value;let t=cur.p*n;if(n>=5)t*=0.85;if(exp)t*=1.5;t=Math.round(t);
   document.getElementById('price').textContent=t+' ₽';
-  const cm=document.getElementById('comment').value.trim();
-  let m=`Здравствуйте! Хочу заказать обработку.\n✦ Услуга: ${cur.n} (код: «${cur.c}»)\n✦ Количество: ${n} шт.\n✦ Срочность: ${exp?'⚡ Экспресс (30 мин)':'Стандарт'}`;
-  if(cm)m+=`\n✦ Пожелания: ${cm}`;
-  m+=`\n\nПрикрепляю фото. Прошу сориентировать по точной цене.`;
+  const c=document.getElementById('cmt').value.trim();
+  let m=`Здравствуйте! Хочу заказать обработку.
+✦ Услуга: ${cur.n} (код «${cur.c}»)
+✦ Количество фото: ${n} шт.
+✦ Срочность: ${exp?'⚡ Экспресс':'Стандарт'}`;
+  if(c)m+=`
+✦ Пожелания: ${c}`;
+  m+=`
+
+Прикрепляю фото к сообщению. Прошу назвать точную стоимость.`;
   document.getElementById('msg').value=m;
-  document.getElementById('vkLink').href=`https://vk.com/im?sel=-239853638&message=`+encodeURIComponent(m);
+  document.getElementById('vkL').href='https://vk.com/im?sel=-239853638&message='+encodeURIComponent(m);
 }
-function copyMsg(){navigator.clipboard.writeText(document.getElementById('msg').value).then(()=>alert('Скопировано! Вставьте в сообщение в ВК.'));calc();}
+function cpMsg(){navigator.clipboard.writeText(document.getElementById('msg').value).then(()=>alert('Скопировано! Вставьте в сообщение в ВК.'))}
 calc();
-
-// ===== PORTFOLIO =====
-const TITLES={retouch:'Естественная AI-ретушь',business:'Деловой портрет',neuro:'Нейро-аватар',restoration:'Реставрация'};
-const grid=document.getElementById('grid');
-let cat='all',show=8;
-function renderGrid(){
-  const arr=cat==='all'?ALL_POSTS:ALL_POSTS.filter(p=>p.cat===cat);
-  const shown=arr.slice(0,show);
-  grid.innerHTML=shown.map(p=>`
-    <div class="work" onclick="openWork('${p.img.replace(/'/g,"\'")}','${(p.title).replace(/'/g,"\'")}','${(p.desc).replace(/'/g,"\'")}')">
-      <div class="img-wrap"><img src="${p.img}" alt="${p.tag}" loading="lazy"></div>
-      <div class="work-body">
-        <span class="work-tag">${p.tag}</span>
-        <h4>${p.title}</h4>
-        <p class="work-desc">${p.desc}</p>
-        <div class="work-meta"><span>📅 ${p.date}</span><span class="arrow">Подробнее ↗</span></div>
-      </div>
-    </div>`).join('');
-  document.getElementById('lmw').style.display=shown<arr.length?'block':'none';
-}
-function openWork(img,t,d){document.getElementById('mImg').src=img;document.getElementById('mTitle').textContent=t;document.getElementById('mDesc').textContent=d;document.getElementById('modal').setAttribute('open','')}
-document.getElementById('modal').addEventListener('click',e=>{if(e.target.id==='modal')document.getElementById('modal').removeAttribute('open')});
-document.querySelectorAll('#catPills .pill').forEach(b=>b.addEventListener('click',()=>{
-  document.querySelectorAll('#catPills .pill').forEach(x=>x.classList.remove('active'));
-  b.classList.add('active');cat=b.dataset.c;show=8;renderGrid();
-}));
-document.getElementById('lm').addEventListener('click',()=>{show+=8;renderGrid()});
-renderGrid();
-
-// ===== INIT =====
-function setToday(){const d=new Date();const m=['января','февраля','марта','апреля','мая','июня','июля','августа','сентября','октября','ноября','декабря'];document.getElementById('today').textContent=d.getDate()+' '+m[d.getMonth()]+' '+d.getFullYear()}
-updateLive();setToday();
-// set slider initial position after image load
-window.addEventListener('load',()=>{
-  const r=comp.getBoundingClientRect();moveComp(r.left+r.width/2);
-});
+/* Today date */
+(function(){const d=new Date();const m=['января','февраля','марта','апреля','мая','июня','июля','августа','сентября','октября','ноября','декабря'];document.getElementById('today').textContent=d.getDate()+' '+m[d.getMonth()]+' '+d.getFullYear()})();
 </script>
 </body>
 </html>
